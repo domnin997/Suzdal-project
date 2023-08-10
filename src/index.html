@@ -31,24 +31,145 @@
         <main>
             <section class="greetings_block"> 
                 <h2>Приветствуем вас на сайте Суздаля</h2>
+                
                 <div class="about_block">
-                    <p>Здесь вы найдете краткую информацию о городе, узнаете о возможностях для отдыха и самых интересных достопримечательностях.</p>
-                    <p>Желаем увлекательного путешествия, и будем рады увидеть вас в городе.</p>
-                    <p>Оставьте ваши контактные данные, чтобы получить персональную консультацию.</p>
+                    <p class="mobile_only">Здесь вы найдете краткую информацию о городе, узнаете о возможностях для отдыха и самых интересных достопримечательностях.</p>
+                    <p class="desktop_only">Здесь вы найдете краткую информацию о городе, и узнаете о:</p>
+                        <div class="about_icons_block desktop_only">
+                            <div class="about_line">
+                                <div class="_text">памятниках архитектуры и культуры</div> 
+                                <div class="_img"><img src="img/church.png" alt="£"></div>
+                            </div>
+                            <div class="about_line">
+                                <div class="_text">возможностях для отдыха и досуга</div> 
+                                <div class="_img"><img src="img/boat.png" alt="£"></div>
+                            </div>
+                            <div class="about_line">
+                                <div class="_text"> персональных предложениях</div> 
+                                <div class="_img"><img src="img/personal.png" alt="£"></div>
+                            </div>
+                        </div>
+                        <p>Желаем увлекательного путешествия, и будем рады увидеть вас в городе.</p>
+                </div>
                     <button class="standard_button">
                         Получить консультацию
                     </button>
-                </div>
+                <p class="consultation_info">Оставьте ваши контактные данные, чтобы получить персональную консультацию.</p>
                 </section>
-            <section> 
-                <h2>Архитектура</h2>
-                <p>Суздаль - один из древнейших городов Золотого кольца России с богатой историей и наследием.</p>
-                <p>На сегодняшний день в Суздале располагается <span>305</span> различных <span>памятников архитектуры</span>. Из них 23 являются объектами Всемирного Наследия ЮНЕСКО.</p>
-            </section>
-            <section> 
+            
+                <section class="arch_block"> 
+                    <h2>Архитектура</h2>
+                    
+                    <div class="arch_intro">
+                        <p>Суздаль - один из древнейших городов Золотого кольца России с богатой историей и наследием.</p>
+                        <p>На сегодняшний день в Суздале располагается <span>305</span> различных <span>памятников архитектуры</span>. Из них 23 являются объектами Всемирного Наследия ЮНЕСКО.</p>
+                    </div>
+
+                    <div class="arch_examples">
+                        
+                        <div class="arch_examples_text"> 
+                            <p>
+                                Среди памятников архитектуры
+                            </p>
+                        </div>
+                        
+                        <div class="arrow_container desktop_only">
+                            <img class="arrow left_arrow" src="img/arrow.png" alt="arrow-pic">
+                        </div>
+                        
+                        <div class="arch_examples_slider">
+                                
+                                <div class="arch_tape">
+                                    <div class="arch_ex">
+                                        <div class="arch_picture pic_1"> <img class='arch_pic' src="img/Pokrov2.jpg" width="270px" height="270px"> </div>
+                                        <div class="arch_desc">5 монастырей</div>
+                                    </div>
+                                    <div class="arch_ex">
+                                        <div class="arch_picture pic_2"> <img class='arch_pic' src="img/Ilya2.jpg" width="270px" height="270px"></div>
+                                        <div class="arch_desc">30 церквей</div>
+                                    </div>
+                                    <div class="arch_ex">
+                                        <div class="arch_picture pic_3">
+                                            <img class='arch_pic' src="img/Tower2.jpg" width="270px" height="270px">
+                                        </div>
+                                        <div class="arch_desc">14 колоколен</div>
+                                    </div>
+                                    <div class="arch_ex">
+                                        <div class="arch_picture pic_4">
+                                            <img class='arch_pic' src="img/Posad3.jpg" width="270px" height="270px">
+                                        </div>
+                                        <div class="arch_desc">Десятки иных зданий</div>
+                                    </div>
+                                </div>
+
+                        </div>
+                        <div class="arrow_container mobile_only">
+                            <img class="arrow left_arrow" src="img/arrow.png" alt="arrow-pic">
+                            <img class="arrow right_arrow" src="img/arrow.png" alt="arrow-pic">
+                        </div>
+                        
+                        <div class="arrow_container desktop_only right_container">
+                            <img class="arrow right_arrow" src="img/arrow.png" alt="arrow-pic">
+                        </div>
+
+                    </div>
+                    <p>
+                        Местные жители <span>говорят, что</span> между Спасо-Ефимьевым и Покровским монастырями <span>существует старинный подземный тоннель,</span> проходящий под рекой... Но это не точно. Поезжайте и проверьте это!
+                    </p>
+                </section>
+            
+            <section class="entertainment_block">
                 <h2>Досуг</h2>
-                What to to in the town?
+
+                <div class="entertainment_intro"> 
+                    <p>Суздаль - это не только архитектура и история. Город живет и играет разными красками, каждый найдет себе занятие по душе.</p> 
+                    <p>Узнайте, как ещё можно провести время в Суздале.</p>
+                </div>
+
+                <div class="tabs_wrapper">
+                    
+                    <div class="tab">
+                        <img class="picture" src="img/national_drinks.jpg" alt="%"></img>
+                        <div class="tab_descr">
+                            <p>Традиционные напитки</p>
+                            <p>Медовуха, сбитень, ягодные настойки и квас - эти напитки издревле являются частью русского застолья. Медовуха и вовсе практически стала визитной карточкой Суздаля.</p>
+                            <p>Погрузитесь в атмосферу древней Руси и отведайте традиционных древнерусских напитков на базарной площади или в одном из уютных питейных заведений города.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab not_displayed">
+                        <div class="picture"></div>
+                        
+                    </div>
+
+                    <div class="tab not_displayed">
+                        <div class="picture"></div>
+                        
+                    </div>
+
+                    <div class="tab not_displayed">
+                        <div class="picture"></div>
+                        
+                    </div>
+
+                    <div class="tab_menu">
+                        <button class="tab_menu_button"></button>
+                        <button class="tab_menu_button"></button>
+                        <button class="tab_menu_button"></button>
+                        <button class="tab_menu_button"></button>
+                    </div>
+
+                </div>
+            
             </section>
+            
+            <section>
+                <h2>Рекомендации</h2>
+                <div> Если вы планируете поедку в Суздаль, мы сформируем для вас список из трёх самых главных мест в зависимости от ваших предпочтений.
+
+                </div>
+            </section>
+            
             <section> 
                 <h2>День города</h2>
                 What to to in the town?
@@ -57,6 +178,10 @@
         <footer>
             Это подвал.
         </footer>
-
+    
+        <script  src="js/index.js">
+    
+            
+         </script>
     </body>
 </html>

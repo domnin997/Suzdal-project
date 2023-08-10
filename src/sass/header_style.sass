@@ -1,0 +1,111 @@
+@import "style_variables.sass"
+
+header
+    box-shadow: $main_block_shadow
+    background-color: $main_blue
+    h1
+        color: $main_orange
+    nav
+        margin: 25px auto 0 auto
+        padding-bottom: 20px
+        gap: 15px
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        justify-content: space-around
+        div
+            height: 35px
+            position: relative
+            text-align: center
+            background-color: $main_lightgrey
+            border-radius: 6px
+            cursor: pointer
+            a
+                width: 100%
+                display: block
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+    div.burger_menu
+        position: relative
+        height: 30px
+        width: 30px
+        .burger_item
+            width: 30px
+            height: 4px
+            border-radius: 4px
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            background-color: $main_orange
+            transition: 0.5s
+        .burger_item::before,
+        .burger_item::after
+            content: ' '
+            position: absolute
+            width: 30px
+            height: 4px
+            border-radius: 4px
+            background-color: $main_orange
+            transition: 0.5s
+        .burger_item::before
+            top: -8px
+        .burger_item::after
+            top: 8px
+    div.burger_menu:hover
+        .burger_item
+            background-color: transparent
+    div.burger_menu:hover
+        .burger_item::before
+            top: 0
+            transform: rotate(45deg)
+    div.burger_menu:hover
+        .burger_item::after
+            top: 0
+            transform: rotate(135deg)
+
+
+@media (max-width: 430px)
+    header
+        min-height: 60px
+        position: sticky
+        top: 0
+        z-index: 10
+    .header_wrapper
+        display: flex
+        justify-content: space-between
+        max-width: 80%
+        margin: 0 auto
+        padding-top: 18px
+        h1
+            margin: 0 15px 0 0
+            font-size: 2.3rem
+            
+        nav
+            display: none
+        div.burger_menu
+            display: block
+    
+@media (min-width: 431px) 
+    header
+        min-height: 120px
+        position: static
+        .header_wrapper
+            padding-top: 20px
+            display: flex
+        h1
+            padding: 15px 0 0 20px
+            margin: 0
+        nav
+            display: grid
+            width: 80%
+        div.burger_menu
+            display: none
+    .header_wrapper
+        nav
+            display: grid
+            width: 80%
+        div.burger_menu
+            display: none
+
+@media (min-width: 768px)
+    header
+        width: 100%
