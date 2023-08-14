@@ -122,7 +122,7 @@
                 <h2>Досуг</h2>
 
                 <div class="entertainment_intro"> 
-                    <p>Суздаль - это не только архитектура и история. Город живет и играет разными красками, каждый найдет себе занятие по душе.</p> 
+                    <p>Суздаль - это не только архитектура и история. <br>Город живет и играет разными красками, каждый найдет себе занятие по душе.</p> 
                     <p>Узнайте, как ещё можно провести время в Суздале.</p>
                 </div>
 
@@ -131,7 +131,7 @@
                     <div class="tab">
                         <img class="picture" src="img/national_drinks.jpg" alt="%"></img>
                         <div class="tab_descr">
-                            <p>Традиционные напитки</p>
+                            <p class="tab_descr_header">Традиционные напитки</p>
                             <p>Медовуха, сбитень, ягодные настойки и квас - эти напитки издревле являются частью русского застолья. Медовуха и вовсе практически стала визитной карточкой Суздаля.</p>
                             <p>Погрузитесь в атмосферу древней Руси и отведайте традиционных древнерусских напитков на базарной площади или в одном из уютных питейных заведений города.</p>
                         </div>
@@ -140,7 +140,7 @@
                     <div class="tab not_displayed">
                         <img class="picture" src="img/national_food.jpg" alt="%"></img>
                         <div class="tab_descr">
-                            <p>Русская кухня</p>
+                            <p class="tab_descr_header">Русская кухня</p>
                             <p>Борщ, блины, вареники и многие другие блюда русской кухни - всё это, а также многие другие блюда вы сможете попробовать в Суздале.</p> 
                             <p>В городе расположено большое число ресторанов и кафе разных уровней и бюджета. Помимо русских блюд вы также сможете попробовать кухню иных стран.</p>
                         </div>
@@ -149,7 +149,7 @@
                     <div class="tab not_displayed">
                         <img class="picture" src="img/new_year.jpg" alt="celebration_picture"></img>
                         <div class="tab_descr">
-                            <p>Праздники и мероприятия</p>
+                            <p class="tab_descr_header">Праздники и мероприятия</p>
                             <p>Ежегодно Суздаль принимает множество гостей на различные праздники, которые проводятся в городе.</p>
                             <p>Залезте на вершину столба и получите заслуженный приз в Масленицу, отведайте все возможные виды огурцов в День Огурца или насладитесь сказочным видом Суздаля в Рождество.</p>
                         </div>
@@ -159,7 +159,7 @@
                     <div class="tab not_displayed">
                         <img class="picture" src="img/pool.jpg" alt="pool_picture"></img>
                         <div class="tab_descr">
-                            <p>Спорт и здоровье</p>
+                            <p class="tab_descr_header">Спорт и здоровье</p>
                             <p>Нырните в бассейн с видом на мощные стены монастыря XVII века или отправьтесь на пробежку по одному из зелёных парков города. Если вам больше по нраву соревнования, сразитесь с друзьями на теннисном корте.</p>
                             <p>В Суздале расположено множество спортивных комплексов, арен и кортов. Крупнейший из них - "Суздаль Арена", спроектированный под 97 видов спорта.</p>
                         </div>      
@@ -176,10 +176,45 @@
             
             </section>
             
-            <section>
+            <section class="reccommendations_block">
                 <h2>Рекомендации</h2>
-                <div> Если вы планируете поедку в Суздаль, мы сформируем для вас список из трёх самых главных мест в зависимости от ваших предпочтений.
+                <div class="reccommendations_intro">
+                    <p>Если вы планируете поедку в Суздаль, мы сформируем для вас список из трёх самых главных мест в зависимости от ваших предпочтений.</p>
+                    <p>Укажите, какие направления наиболее интересны для вас.</p>
+                </div>
+                <form class="ask_recommendation">
+                    <div class="radio_container">
+                        
+                        <div class="button_container">
+                            <input type="radio"
+                                name="recommendation"
+                                id="reccomendation_choice_1">
+                            <label for="reccomendation_choice_1">Церкви и монастыри</label>
+                        </div>
 
+                        <div class="button_container">
+                            <input type="radio"
+                                   name="recommendation"
+                                   id="reccomendation_choice_2">
+                            <label for="reccomendation_choice_2">Гражданские постройки</label>
+                        </div>
+
+                        <div class="button_container">
+                            <input type="radio"
+                                   name="recommendation"
+                                   id="reccomendation_choice_3">
+                            <label for="reccomendation_choice_3">Кухня</label>
+                        </div>
+                    </div>
+        
+                    <div class="confirmButtonContainer">
+                        <button class="confirm_button">Получить рекомендации</button>
+                    </div>
+
+                </form>
+                
+                <div class="recommendation_container">
+               
                 </div>
             </section>
             
