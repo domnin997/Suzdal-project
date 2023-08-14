@@ -5,7 +5,9 @@ const archPic = document.querySelectorAll('.arch_pic'),
       sliderWindow = document.querySelector('.arch_examples_slider'),
       width = window.getComputedStyle(sliderWindow).width;
 
-let sliderIndex = 1,
+// Блок слайдера из раздела "Архитектура"
+
+      let sliderIndex = 1,
     offset = 0;
 
 archTape.style.width = archSlides.length * 100 + '%';
@@ -45,6 +47,8 @@ arrowContainer.forEach(element => {
         })
     })
 
+// Блок корректировки размера картинок при изменении размера экрана
+
 window.addEventListener('resize', (e) => {
     
     setSlideSize();
@@ -65,3 +69,28 @@ window.addEventListener('resize', (e) => {
         })
       };  
 });
+
+// Блок работы табов раздела "Досуг"
+
+const tabs = document.querySelectorAll('.tab'),
+      tabMenuOptions = document.querySelectorAll('.tab_menu_button');
+
+      tabs[0].classList.remove('not_displayed');
+      tabMenuOptions[0].classList.add('selected');
+
+      tabMenuOptions.forEach((element, index) => {
+        
+        element.addEventListener('click', event => {
+            tabMenuOptions.forEach((el) => {
+                el.classList.remove('selected');
+            })
+            element.classList.add('selected');
+
+            tabs.forEach((element) => {
+                element.classList.add('not_displayed');
+            });
+            
+            tabs[index].classList.remove('not_displayed');
+
+        })
+      })
