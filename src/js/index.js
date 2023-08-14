@@ -94,3 +94,20 @@ const tabs = document.querySelectorAll('.tab'),
 
         })
       })
+
+// Блок "Рекомендации"
+
+const churchesBtn = document.querySelector('#recommendation_choice_1'),
+      civilBtn = document.querySelector('#recommendation_choice_2'),
+      kitchenBtn = document.querySelector('#recommendation_choice_3'),
+      recContainer = document.querySelector('.recommendation_container'),
+      recConfirmBtn = document.querySelector('.confirm_button');
+
+recConfirmBtn.addEventListener('click', event => {
+    event.preventDefault();
+    
+    if (churchesBtn.checked || civilBtn.checked || kitchenBtn.checked) {
+        recContainer.classList.add('recommendations_block_showed');
+    }
+})
+

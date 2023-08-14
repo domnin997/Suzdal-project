@@ -1,0 +1,98 @@
+@import "style_variables.sass"
+
+@keyframes btn_coloring
+    from
+        background-color: $main_blue
+    to
+        background-color: $dark_blue
+
+@keyframes block_appearing
+    from
+        height: 0px
+    to
+        height: 400px
+
+.recommendations_block_showed
+    animation: block_appearing 1.5s forwards
+
+.recommendations_block
+    margin: 0 auto
+    background-color: lightblue
+    h2
+        text-align: center
+        margin: 0 auto
+    .recommendations_intro
+        margin-top: 60px
+        text-align: center
+
+    .ask_recommendation label:hover
+        background-color: yellow
+
+.radio_container
+    margin: 50px auto 0 auto
+    max-width: 85%
+    display: flex
+    justify-content: space-around
+
+.button_container label
+    display: block
+    cursor: pointer 
+    height: 50px
+    width: 250px
+    text-align: center
+    font-size: 1.8rem
+    padding-top: 25px
+    border-radius: 6px
+    color: white
+    user-select: none
+    background-color: $main_blue
+
+.button_container label:hover
+    animation: btn_coloring 1s forwards
+.button_container input[type="radio"]
+    display: none
+
+.ask_recommendation input[type=radio]:checked + label
+    background-color: $dark_blue
+
+.confirm_button
+    display: block
+    cursor: pointer 
+    height: 70px
+    width: 250px
+    text-align: center
+    font-size: 1.8rem
+    margin: 50px auto 0 auto
+    border-radius: 6px
+    color: white
+    user-select: none
+    background-color: $main_blue
+
+.confirm_button:hover
+    animation: btn_coloring 1s forwards
+
+
+@media (min-width: 1px) and (max-width: 430px)
+    .recommendations_block
+        max-width: 90%
+
+@media (min-width: 431px) and (max-width: 768px)
+    .recommendations_block
+        max-width: 80%
+
+@media (min-width: 769px) and (max-width: 1149px)
+    .recommendations_block
+        max-width: 80%
+
+@media (min-width: 1150px) and (max-width: 1400px)
+    .recommendations_block
+        max-width: 80%
+
+@media (min-width: 1401px) and (max-width: 1650px)
+    .recommendations_block
+        max-width: 80%
+    
+@media (min-width: 1651px)
+    .recommendations_block
+        margin: 0 auto
+        max-width: 80%

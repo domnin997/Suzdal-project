@@ -1,1 +1,1 @@
-@keyframes btn_to_dark{from{background-color:#33368f}to{background-color:#2c2f78}}.standard_button{width:210px;height:70px;border:none;border-radius:5px;cursor:pointer;background-color:#33368f;color:#f7f7f7}.standard_button:hover{animation:btn_to_dark 1.5s forwards}
+@keyframes btn_to_dark{from{background-color:#15138a}to{background-color:#5a58e0}}.standard_button{width:210px;height:70px;border:none;border-radius:5px;cursor:pointer;background-color:#15138a;color:#f7f7f7}.standard_button:hover{animation:btn_to_dark 1.5s forwards}
