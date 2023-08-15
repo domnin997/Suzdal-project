@@ -12,14 +12,56 @@
     to
         height: 400px
 
+@keyframes block_disappearing
+    from
+        height: 400px
+    to
+        height: 0px
+
 @keyframes appearing
     from
         opacity: 0%
     to
         opacity: 100%
+
+@keyframes disappearing
+    from
+        opacity: 100%
+    to
+        opacity: 0%
+
+@keyframes show_btn_move
+    from
+        left: 50%
+    to
+        left: 35%
+
+@keyframes show_btn_move_right
+    from
+        left: 35%
+    to
+        left: 50%
+
+@keyframes clear_btn_move
+    from
+        left: 50%
+    to
+        left: 65%
+
+@keyframes clear_btn_move_left
+    from
+        left: 65%
+    to
+        left: 50%
     
 .recommendations_block_showed
     animation: block_appearing 1.5s forwards
+.recommendations_block_hidden
+    animation: block_disappearing 1.5s forwards
+.reccontainer_hidden
+    animation: disappearing 0.5s forwards
+.reccontainer_not_displayed
+    display: none
 
 .recommendations_block
     margin: 0 auto
@@ -61,20 +103,39 @@
 .ask_recommendation input[type=radio]:checked + label
     background-color: $dark_blue
 
-.confirm_button
-    display: block
-    cursor: pointer 
-    height: 70px
-    width: 250px
-    text-align: center
-    font-size: 1.8rem
-    margin: 50px auto 0 auto
-    border-radius: 6px
-    color: white
-    user-select: none
-    background-color: $main_blue
+.confirm_button_container
+    position: relative
+    height: 80px
+    width: 100%
+    .rec_button
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        z-index: 2
+        border: none
+        display: block
+        cursor: pointer 
+        height: 70px
+        width: 250px
+        text-align: center
+        font-size: 1.8rem
+        margin: 50px auto 0 auto
+        border-radius: 6px
+        color: white
+        user-select: none
+        background-color: $main_blue
+    .clear_button
+        z-index: 1
 
-.confirm_button:hover
+.show_btn_clicked
+    animation: show_btn_move 1.5s forwards
+
+.moved:hover
+    animation: btn_coloring 1s forwards
+.rec_button:hover
+    animation: btn_coloring 1s forwards
+.clear_button
     animation: btn_coloring 1s forwards
 
 .rec_element_container
@@ -88,7 +149,17 @@
     font-size: 1.5rem
     display: flex
     justify-content: space-between
+    .rec_element_container
+        display: none
+        .img_container
+            img
+                width: 250px
+                height: 150px
+                object-fit: cover
 
+.displayed
+    display: block
+    animation: block_appearing 1.5s forwards
 
 @media (min-width: 1px) and (max-width: 430px)
     .recommendations_block
