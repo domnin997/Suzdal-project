@@ -12,6 +12,12 @@
     to
         height: 400px
 
+@keyframes appearing
+    from
+        opacity: 0%
+    to
+        opacity: 100%
+    
 .recommendations_block_showed
     animation: block_appearing 1.5s forwards
 
@@ -70,6 +76,18 @@
 
 .confirm_button:hover
     animation: btn_coloring 1s forwards
+
+.rec_element_container
+    max-width: 280px
+    max-height: 500px
+    background-color: yellow
+
+.recommendation_container
+    margin: 50px auto 0 auto
+    max-width: 90%
+    font-size: 1.5rem
+    display: flex
+    justify-content: space-between
 
 
 @media (min-width: 1px) and (max-width: 430px)

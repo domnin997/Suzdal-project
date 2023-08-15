@@ -97,11 +97,35 @@ const tabs = document.querySelectorAll('.tab'),
 
 // Блок "Рекомендации"
 
+const churchesDB = [{src:'img/Spas_Monastery.jpg', name: 'Спасо-Ефимьев монастырь', description: 'Монастырь основан в 1352 году. На протяжении своей истории перестраивался и обрастал новыми строениями. В советский период в монастыре размещалась тюрьма. На сегодняшний день монастырь представляет собой укрепленную территорию с интересными музеями.'}, {src:'img/Bogoroditsa_church2.jpg',name: 'Собор Рождества Богородицы', description: 'Самое старое здание в Суздале. Он построен на месте старой церкви в 1222-1225 году, затем неоднократно перестраивался. Внутри собор украшен роскошными фресками, а входные двери отделаны сусальным золотом.'}, {src: 'img/Ilya4.jpg', name: 'Церковь Ильи Пророка', description: 'Храм построен в 1744 году в живописном месте - излучине реки Каменки. С холма, на котром расположен храм, открывается великолепный вид на Ильинский луг, Кремль и торговые ряды.'}],
+      civilDB =[{src:'Styles/images/Posad2.jpg', name: 'Посадский дом', description: 'Здание построено в конце XVII века, и представляет собой безусловную архитектурную жемчужину города, несмотря на скромное украшение. Посадский дом является единственным в Суздале и очень редким в России памятником жилого каменного зодчества.'}, {src: 'Styles/images/WoodenMuseum.jpg', name: 'Музей деревянного зодчества', description: 'Музей деревянных построек разных времен и назначений, собранных со всей Владимирской области. Представлены разные здания: от старинных мельниц до амбаров на деревянных сваях.'}, {src:'Styles/images/TradeRows.jpg',name: 'Торговые ряды', description: 'Возведены в начале XIX века, и по-прежнему выполняют свое назначение. В одном из десятков магазинчиков можно купить сувенир, а в кафе - отведать местных блюд.'}],
+      cuisineDrinksDB = [{src:'Styles/images/uley.jpg', name: 'Ресторан "Улей"', description: 'Ресторан расположен на территории гостиничного комплекса "Пушкарская слобода", в нескольких минутах от музея деревянного зодчества. В меню традиционные русские блюда, которые вам подадут в интерьере бревенчатых стен и мебели из древесного массива.'}, {src: 'Styles/images/cucumber.jpg',name: 'Ресторан"Огурец"', description: 'Особенность ресторана - использование в приготовлении блюд фермерских сезонных продуктов от локальных производителей. В меню русская и европейская кухни. Ресторан расположен в двух шагах от Спасо-Ефимьева монастыря.'}, {src: 'Styles/images/old_yard.jpg',name: 'Ресторан "Гостиный двор"', description: 'Ресторан расположен внтури торговых рядов Суздаля, неподалеку от Кремля и территории старого города. В меню русская кухня, залы оформлены в стиле конца XIX века.'}];
+
+
 const churchesBtn = document.querySelector('#recommendation_choice_1'),
       civilBtn = document.querySelector('#recommendation_choice_2'),
       kitchenBtn = document.querySelector('#recommendation_choice_3'),
       recContainer = document.querySelector('.recommendation_container'),
       recConfirmBtn = document.querySelector('.confirm_button');
+
+function buildRecElements (database) {
+    let newBlock = document.createElement('div');
+        let newElements = database.map((el) => {
+            let element = document.createElement('div');
+                element.innerHTML = `<div class="img_container">
+                                        <img> </img>
+                                    </div>
+                                    <div class="rec_header">${el.name}</div>
+                                    <div class="rec_text">${el.description}</div>`
+                
+                element.classList.add('rec_element_container');
+                recContainer.append(element);
+        })
+
+        
+        
+}
+
 
 recConfirmBtn.addEventListener('click', event => {
     event.preventDefault();
@@ -109,5 +133,10 @@ recConfirmBtn.addEventListener('click', event => {
     if (churchesBtn.checked || civilBtn.checked || kitchenBtn.checked) {
         recContainer.classList.add('recommendations_block_showed');
     }
+
+    if (churchesBtn.checked) {
+        buildRecElements(churchesDB);
+    }
+
 })
 
