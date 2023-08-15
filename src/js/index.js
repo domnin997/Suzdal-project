@@ -109,10 +109,14 @@ const churchesBtn = document.querySelector('#recommendation_choice_1'),
       recConfirmBtn = document.querySelector('.confirm_button'),
       clearBtn = document.querySelector('.clear_button');
 
-let recBlockStatus = {
+let recCardsStatus = {
     churchesShowed: false,
     civilShowed: false,
     cuisineShowed: false,
+}
+
+let recBlockStatus = {
+    recBlockDisplayed: false,
 }
 
 function smoothAppearance (elem) {
@@ -131,16 +135,17 @@ function buildRecElements (database) {
                                     <div class="rec_text">${el.description}</div>`
                 
                 element.classList.add('rec_element_container');
-                // element.style.cssText = 'display: block; animation: appearing 1.5s forwards';
+                
                 recContainer.append(element);
                 
                 setTimeout(smoothAppearance, 500, element);
-        })    
+        })
+    setTimeout(() => {recBlockStatus.recBlockDisplayed = true}, 1500)
 }
 
 function toggleStatus (trueString) {
-    for (let [key, value] of Object.entries(recBlockStatus)) {
-        recBlockStatus.key = false;
+    for (let [key, value] of Object.entries(recCardsStatus)) {
+        recCardsStatus.key = false;
     }
         trueString = true;
 }
@@ -149,46 +154,64 @@ recConfirmBtn.addEventListener('click', event => {
     
     event.preventDefault();
     
-    if (churchesBtn.checked || civilBtn.checked || kitchenBtn.checked) {
+    // if (!recBlockStatus.recBlockDisplayed) {
+
+    if (churchesBtn.checked || civilBtn.checked || kitchenBtn.checked && (!recBlockStatus.recBlockDisplayed)) {
         recContainer.style.cssText = ' ';
-        recContainer.classList.remove('recommendations_block_hidden');
-        recContainer.classList.add('recommendations_block_showed');
-        recContainer.classList.remove('reccontainer_hidden');
+            recContainer.classList.remove('recommendations_block_hidden');
+            recContainer.classList.add('recommendations_block_showed');
             // recConfirmBtn.classList.add('show_btn_clicked');
             recConfirmBtn.style.cssText = 'animation: show_btn_move 1.5s forwards';
             clearBtn.style.cssText = 'animation: clear_btn_move 1.5s forwards';
     }
 
     if (churchesBtn.checked) {
-        if (!recBlockStatus.churchesShowed) {
-            toggleStatus(recBlockStatus.churchesShowed);
+        if (!recCardsStatus.churchesShowed) {
+            toggleStatus(recCardsStatus.churchesShowed);
             buildRecElements(churchesDB);
         }
     }
 
     if (civilBtn.checked) {
-        if (!recBlockStatus.civilShowed) {
-            toggleStatus(recBlockStatus.civilShowed);
+        if (!recCardsStatus.civilShowed) {
+            toggleStatus(recCardsStatus.civilShowed);
             buildRecElements(civilDB);
         }
     }
 
     if (kitchenBtn.checked) {
-        if (!recBlockStatus.cuisineShowed) {
-            toggleStatus(recBlockStatus.cuisineShowed);
+        if (!recCardsStatus.cuisineShowed) {
+            toggleStatus(recCardsStatus.cuisineShowed);
             buildRecElements(cuisineDrinksDB);
         }
     }
-
+// }
+    console.log(recBlockStatus.recBlockDisplayed) 
+    
 })
 
 clearBtn.addEventListener('click', event => {
     event.preventDefault();
-    document.querySelector('.rec_element_container').style.cssText = 'animation: disappearing 1.5s forwards'
-    recContainer.style.cssText = 'animation: block_disappearing 1.5s forwards';   
-    // recContainer.classList.remove('recommendations_block_showed');
+    if (recBlockStatus.recBlockDisplayed) {
+    // document.querySelectorAll('.rec_element_container').forEach(el => el.style.cssText = 'animation: disappearing 1s forwards')
+    // recContainer.style.cssText = 'animation: block_disappearing 1.5s forwards';
+    document.querySelectorAll('.rec_element_container').forEach(el => {el.style.cssText = 'display: block; animation: disappearing 1.5s forwards';})
+        setTimeout(function () {document.querySelectorAll('.rec_element_container').forEach(el => {el.style.cssText = 'display: none'})}, 1500);
+            setTimeout(function(){recContainer.classList.add('recommendations_block_hidden');}, 1600)
+        recConfirmBtn.style.cssText = 'animation: show_btn_move_right 1.5s forwards';
+        clearBtn.style.cssText = 'animation: clear_btn_move_left 1.5s forwards';
+        setTimeout(function () {recBlockStatus.recBlockDisplayed = false}, 3100);
+        console.log(recBlockStatus.recBlockDisplayed) 
+    
+    }
+    
+    
+    
+    
+        // recContainer.classList.remove('recommendations_block_showed');
         // recContainer.classList.add('reccontainer_hidden')    
-            recContainer.style.cssText = 'animation: disappearing 1s forwards';
-                setTimeout(function notDisp() {recContainer.style.cssText += 'display: none'}, 1000);
+            // recContainer.style.cssText = 'animation: disappearing 1s forwards';
+            
+                // setTimeout(function notDisp() {recContainer.style.cssText += 'display: none'}, 1000);
                 
 })
