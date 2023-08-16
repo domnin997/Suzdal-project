@@ -154,12 +154,12 @@ recConfirmBtn.addEventListener('click', event => {
     
     event.preventDefault();
     
-    // if (!recBlockStatus.recBlockDisplayed) {
+    if (!recBlockStatus.recBlockDisplayed || recContainer.classList.contains('mark')) {
 
     if (churchesBtn.checked || civilBtn.checked || kitchenBtn.checked && (!recBlockStatus.recBlockDisplayed)) {
         recContainer.style.cssText = ' ';
             recContainer.classList.remove('recommendations_block_hidden');
-            recContainer.classList.add('recommendations_block_showed');
+            recContainer.classList.add('recommendations_block_showed', 'mark');
             // recConfirmBtn.classList.add('show_btn_clicked');
             recConfirmBtn.style.cssText = 'animation: show_btn_move 1.5s forwards';
             clearBtn.style.cssText = 'animation: clear_btn_move 1.5s forwards';
@@ -185,7 +185,7 @@ recConfirmBtn.addEventListener('click', event => {
             buildRecElements(cuisineDrinksDB);
         }
     }
-// }
+}
     console.log(recBlockStatus.recBlockDisplayed) 
     
 })
@@ -195,6 +195,7 @@ clearBtn.addEventListener('click', event => {
     if (recBlockStatus.recBlockDisplayed) {
     // document.querySelectorAll('.rec_element_container').forEach(el => el.style.cssText = 'animation: disappearing 1s forwards')
     // recContainer.style.cssText = 'animation: block_disappearing 1.5s forwards';
+    recContainer.classList.remove('mark');
     document.querySelectorAll('.rec_element_container').forEach(el => {el.style.cssText = 'display: block; animation: disappearing 1.5s forwards';})
         setTimeout(function () {document.querySelectorAll('.rec_element_container').forEach(el => {el.style.cssText = 'display: none'})}, 1500);
             setTimeout(function(){recContainer.classList.add('recommendations_block_hidden');}, 1600)

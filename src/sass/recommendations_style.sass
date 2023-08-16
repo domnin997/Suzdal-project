@@ -10,11 +10,11 @@
     from
         height: 0px
     to
-        height: 400px
+        height: 450px
 
 @keyframes block_disappearing
     from
-        height: 400px
+        height: 450px
     to
         height: 0px
 
@@ -72,61 +72,83 @@
     .recommendations_intro
         margin-top: 60px
         text-align: center
-
+    form
+        .radio_container
+            margin: 50px auto 0 auto
+            max-width: 85%
+            display: flex
+            justify-content: space-around
+            .button_container label
+                display: block
+                cursor: pointer 
+                height: 50px
+                width: 250px
+                text-align: center
+                font-size: 1.8rem
+                padding-top: 25px
+                border-radius: 6px
+                color: white
+                user-select: none
+                background-color: $main_blue
+            .button_container label:hover
+                animation: btn_coloring 1s forwards
+            .button_container input[type="radio"]
+                display: none
+            .button_container label:hover
+                animation: btn_coloring 1s forwards
+        .confirm_button_container
+            position: relative
+            height: 80px
+            width: 100%
+            .rec_button
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+                z-index: 2
+                border: none
+                display: block
+                cursor: pointer 
+                height: 70px
+                width: 250px
+                text-align: center
+                font-size: 1.8rem
+                margin: 50px auto 0 auto
+                border-radius: 6px
+                color: white
+                user-select: none
+                background-color: $main_blue
+            .clear_button
+                z-index: 1
+    .recommendation_container
+        margin: 50px auto 0 auto
+        max-width: 90%
+        font-size: 1.5rem
+        display: flex
+        justify-content: space-between
+        .rec_element_container
+            margin-top: 50px
+            max-width: 280px
+            max-height: 500px
+            background-color: yellow
+            display: none
+            .img_container
+                img
+                    display: block
+                    margin: 0 auto
+                    width: 250px
+                    height: 150px
+                    object-fit: cover
+            .rec_header
+                padding: 15px 12px 15px 12px
+            .rec_text
+                padding: 0 12px 0 12px
+    
     .ask_recommendation label:hover
         background-color: yellow
 
-.radio_container
-    margin: 50px auto 0 auto
-    max-width: 85%
-    display: flex
-    justify-content: space-around
-
-.button_container label
-    display: block
-    cursor: pointer 
-    height: 50px
-    width: 250px
-    text-align: center
-    font-size: 1.8rem
-    padding-top: 25px
-    border-radius: 6px
-    color: white
-    user-select: none
-    background-color: $main_blue
-
-.button_container label:hover
-    animation: btn_coloring 1s forwards
-.button_container input[type="radio"]
-    display: none
-
 .ask_recommendation input[type=radio]:checked + label
     background-color: $dark_blue
-
-.confirm_button_container
-    position: relative
-    height: 80px
-    width: 100%
-    .rec_button
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
-        z-index: 2
-        border: none
-        display: block
-        cursor: pointer 
-        height: 70px
-        width: 250px
-        text-align: center
-        font-size: 1.8rem
-        margin: 50px auto 0 auto
-        border-radius: 6px
-        color: white
-        user-select: none
-        background-color: $main_blue
-    .clear_button
-        z-index: 1
 
 .show_btn_clicked
     animation: show_btn_move 1.5s forwards
@@ -138,25 +160,6 @@
 .clear_button
     animation: btn_coloring 1s forwards
 
-.rec_element_container
-    max-width: 280px
-    max-height: 500px
-    background-color: yellow
-
-.recommendation_container
-    margin: 50px auto 0 auto
-    max-width: 90%
-    font-size: 1.5rem
-    display: flex
-    justify-content: space-between
-    .rec_element_container
-        display: none
-        .img_container
-            img
-                width: 250px
-                height: 150px
-                object-fit: cover
-
 .displayed
     display: block
     animation: block_appearing 1.5s forwards
@@ -167,6 +170,17 @@
 @media (min-width: 1px) and (max-width: 430px)
     .recommendations_block
         max-width: 90%
+        form
+            .radio_container
+                .button_container label
+                    height: 40px
+                    width: 110px
+                    font-size: 1rem
+            .confirm_button_container
+                .rec_button
+                    height: 60px
+                    width: 200px
+                    font-size: 1.6rem
 
 @media (min-width: 431px) and (max-width: 768px)
     .recommendations_block
@@ -174,15 +188,66 @@
 
 @media (min-width: 769px) and (max-width: 1149px)
     .recommendations_block
-        max-width: 80%
+        width: 100%
+        .recommendation_container
+            font-size: 1.4rem
+            .rec_element_container
+                max-width: 230px
+                max-height: 500px
+                .img_container
+                    img
+                        width: 220px
+                        height: 140px
+        form
+            .radio_container
+                .button_container label
+                    height: 40px
+                    width: 200px
+                    font-size: 1.6rem
+            .confirm_button_container
+                .rec_button
+                    height: 60px
+                    width: 200px
+                    font-size: 1.6rem
 
 @media (min-width: 1150px) and (max-width: 1400px)
     .recommendations_block
         max-width: 80%
+        .recommendation_container
+            font-size: 1.4rem
+            .rec_element_container
+                max-width: 210px
+                max-height: 500px
+                .img_container
+                    img
+                        width: 200px
+                        height: 140px
+        form
+            .radio_container
+                .button_container label
+                    height: 40px
+                    width: 200px
+                    font-size: 1.6rem
+            .confirm_button_container
+                .rec_button
+                    height: 60px
+                    width: 200px
+                    font-size: 1.6rem
 
 @media (min-width: 1401px) and (max-width: 1650px)
     .recommendations_block
         max-width: 80%
+        .recommendation_container
+            margin: 50px auto 0 auto
+            max-width: 90%
+            font-size: 1.5rem
+            .rec_element_container
+                max-width: 250px
+                max-height: 470px
+                .img_container
+                    img
+                        width: 230px
+                        height: 150px
     
 @media (min-width: 1651px)
     .recommendations_block
