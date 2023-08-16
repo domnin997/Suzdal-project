@@ -131,7 +131,7 @@ function buildRecElements (database) {
                 element.innerHTML = `<div class="img_container">
                                         <img src="${el.src}" alt="rec_picture"> </img>
                                     </div>
-                                    <div class="rec_header">${el.name}</div>
+                                    <div class="rec_header"><b>${el.name}</b></div>
                                     <div class="rec_text">${el.description}</div>`
                 
                 element.classList.add('rec_element_container');
@@ -161,8 +161,14 @@ recConfirmBtn.addEventListener('click', event => {
             recContainer.classList.remove('recommendations_block_hidden');
             recContainer.classList.add('recommendations_block_showed', 'mark');
             // recConfirmBtn.classList.add('show_btn_clicked');
-            recConfirmBtn.style.cssText = 'animation: show_btn_move 1.5s forwards';
-            clearBtn.style.cssText = 'animation: clear_btn_move 1.5s forwards';
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                recConfirmBtn.style.cssText = 'animation: show_btn_move_mobile 1.5s forwards';
+                clearBtn.style.cssText = 'animation: clear_btn_move_mobile 1.5s forwards';
+            } else {
+                recConfirmBtn.style.cssText = 'animation: show_btn_move 1.5s forwards';
+                clearBtn.style.cssText = 'animation: clear_btn_move 1.5s forwards';
+            }
+            
     }
 
     if (churchesBtn.checked) {
