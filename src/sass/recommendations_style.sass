@@ -18,6 +18,18 @@
     to
         height: 0px
 
+@keyframes block_appearing_mobile
+    from
+        min-height: 0px
+    to
+        min-height: 1300px
+
+@keyframes block_disappearing_mobile
+    from
+        min-height: 1300px
+    to
+        min-height: 0px
+
 @keyframes appearing
     from
         opacity: 0%
@@ -70,16 +82,16 @@
     animation: block_appearing 1.5s forwards
 .recommendations_block_hidden
     animation: block_disappearing 1.5s forwards
-.reccontainer_hidden
-    animation: disappearing 0.5s forwards
-.reccontainer_not_displayed
-    display: none
+
+.recommendations_block_showed_mobile
+    animation: block_appearing_mobile 1.5s forwards
+.recommendations_block_hidden_mobile
+    animation: block_disappearing_mobile 1.5s forwards
 
 .recommendations_block
     min-height: 500px
-    margin: 70px auto 0 auto
+    margin: 85px auto 0 auto
     padding: 20px 0 20px 0
-    
     background-color: lightblue
     h2
         text-align: center
@@ -87,6 +99,8 @@
     .recommendations_intro
         margin-top: 60px
         text-align: center
+        .rec_intro_2
+            margin: 50px 0 50px 0
     form
         .radio_container
             margin: 50px auto 0 auto
@@ -95,6 +109,7 @@
             justify-content: space-around
             .button_container label
                 display: block
+                margin: 0 auto
                 cursor: pointer 
                 height: 50px
                 width: 250px
@@ -140,13 +155,10 @@
         max-width: 90%
         font-size: 1.5rem
         display: grid
-        justify-content: space-between
+        justify-content: center
         .rec_element_container
-            margin-top: 50px
-            max-width: 280px
-            max-height: 500px
             border-radius: 5px
-            margin: 30px auto 0 auto
+            margin: 50px auto 0 auto
             background-color: white
             display: none
             box-shadow: $main_img_shadow
@@ -156,8 +168,6 @@
                     margin: 0 auto
                     padding-top: 10px
                     border-radius: 5px
-                    width: 250px
-                    height: 150px
                     object-fit: cover
             .rec_header
                 padding: 15px 12px 15px 12px
@@ -204,46 +214,61 @@
                     height: 50px
                     width: 150px
                     font-size: 1rem
+        .rec_element_container
+            max-width: 280px
+            max-height: 500px
+            .img_container
+                img
+                   width: 260px
+                   height: 200px 
+            .rec_header
+                padding: 15px 12px 15px 12px
+            .rec_text
+                padding: 0 12px 0 12px
 
 @media (min-width: 431px) and (max-width: 768px)
     .recommendations_block
-        max-width: 80%
+        max-width: 90%
         .recommendation_container
             font-size: 1.4rem
             grid-template-rows: 1fr 1fr 1fr
+            align-items: center
             .rec_element_container
-                max-width: 350px
-                max-height: 300px
+                max-width: 450px
+                max-height: 380px
                 margin: 30px auto 0 auto
                 .img_container
                     img
-                        width: 330px
-                        height: 180px
+                        width: 380px
+                        height: 200px
         form
             .radio_container
-                grid-template-columns: 1fr 1fr 1fr
+                max-width: 90%
+                grid-template-rows: 1fr 1fr 1fr
+                gap: 10px
                 .button_container label
                     height: 40px
-                    width: 200px
-                    font-size: 1.6rem
+                    width: 300px
+                    font-size: 1.3rem
             .confirm_button_container
                 .rec_button
                     height: 60px
-                    width: 200px
-                    font-size: 1.6rem
+                    width: 180px
+                    font-size: 1.3rem
 
 @media (min-width: 769px) and (max-width: 1149px)
     .recommendations_block
         width: 100%
         .recommendation_container
             font-size: 1.4rem
+            grid-template-columns: 1fr 1fr 1fr
             .rec_element_container
-                max-width: 230px
-                max-height: 500px
+                max-width: 240px
+                min-height: 300px
                 .img_container
                     img
                         width: 220px
-                        height: 140px
+                        height: 200px
         form
             .radio_container
                 grid-template-columns: 1fr 1fr 1fr
@@ -300,7 +325,10 @@
                         height: 150px
         form
             .radio_container
+                margin: 0 auto
                 grid-template-columns: 1fr 1fr 1fr
+                justify-content: space-around
+                align-items: center
                 .button_container label
                     height: 35px
                     width: 190px
@@ -316,3 +344,8 @@
     .recommendations_block
         margin: 0 auto
         max-width: 80%
+        form
+            .radio_container
+                margin: 0 auto
+                max-width:80%
+                grid-template-columns: 1fr 1fr 1fr

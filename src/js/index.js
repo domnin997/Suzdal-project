@@ -158,8 +158,14 @@ recConfirmBtn.addEventListener('click', event => {
 
     if (churchesBtn.checked || civilBtn.checked || kitchenBtn.checked && (!recBlockStatus.recBlockDisplayed)) {
         recContainer.style.cssText = ' ';
-            recContainer.classList.remove('recommendations_block_hidden');
-            recContainer.classList.add('recommendations_block_showed', 'mark');
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                recContainer.classList.remove('recommendations_block_hidden_mobile');
+                recContainer.classList.add('recommendations_block_showed_mobile', 'mark');
+            } else {
+                recContainer.classList.remove('recommendations_block_hidden');
+                recContainer.classList.add('recommendations_block_showed', 'mark');
+            }
+            
             // recConfirmBtn.classList.add('show_btn_clicked');
             if (window.matchMedia("(max-width: 768px)").matches) {
                 recConfirmBtn.style.cssText = 'animation: show_btn_move_mobile 1.5s forwards';
@@ -168,7 +174,6 @@ recConfirmBtn.addEventListener('click', event => {
                 recConfirmBtn.style.cssText = 'animation: show_btn_move 1.5s forwards';
                 clearBtn.style.cssText = 'animation: clear_btn_move 1.5s forwards';
             }
-            
     }
 
     if (churchesBtn.checked) {
