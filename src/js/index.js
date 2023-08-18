@@ -204,26 +204,28 @@ recConfirmBtn.addEventListener('click', event => {
 clearBtn.addEventListener('click', event => {
     event.preventDefault();
     if (recBlockStatus.recBlockDisplayed) {
-    // document.querySelectorAll('.rec_element_container').forEach(el => el.style.cssText = 'animation: disappearing 1s forwards')
-    // recContainer.style.cssText = 'animation: block_disappearing 1.5s forwards';
-    recContainer.classList.remove('mark');
-    document.querySelectorAll('.rec_element_container').forEach(el => {el.style.cssText = 'display: block; animation: disappearing 1.5s forwards';})
-        setTimeout(function () {document.querySelectorAll('.rec_element_container').forEach(el => {el.style.cssText = 'display: none'})}, 1500);
-            setTimeout(function(){recContainer.classList.add('recommendations_block_hidden');}, 1600)
+        recContainer.classList.remove('mark');
+        document.querySelectorAll('.rec_element_container').forEach(el => {
+            el.style.cssText = 'display: block; animation: disappearing 1.5s forwards';
+        })
+
+        setTimeout(function () {
+            document.querySelectorAll('.rec_element_container').forEach(el => {
+                el.style.cssText = 'display: none'
+        })}, 1500);
+        
+        setTimeout(function(){
+            
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                recContainer.classList.add('recommendations_block_hidden_mobile');
+                recContainer.classList.remove('recommendations_block_showed_mobile', 'mark');
+            } else {
+                recContainer.classList.add('recommendations_block_hidden');
+                recContainer.classList.remove('recommendations_block_showed', 'mark');
+            }
+        }, 1600)
         recConfirmBtn.style.cssText = 'animation: show_btn_move_right 1.5s forwards';
         clearBtn.style.cssText = 'animation: clear_btn_move_left 1.5s forwards';
-        setTimeout(function () {recBlockStatus.recBlockDisplayed = false}, 3100);
-        console.log(recBlockStatus.recBlockDisplayed) 
-    
+        setTimeout(function () {recBlockStatus.recBlockDisplayed = false}, 3100); 
     }
-    
-    
-    
-    
-        // recContainer.classList.remove('recommendations_block_showed');
-        // recContainer.classList.add('reccontainer_hidden')    
-            // recContainer.style.cssText = 'animation: disappearing 1s forwards';
-            
-                // setTimeout(function notDisp() {recContainer.style.cssText += 'display: none'}, 1000);
-                
 })

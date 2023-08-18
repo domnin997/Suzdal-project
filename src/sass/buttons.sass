@@ -1,11 +1,5 @@
 @import "style_variables.sass"
 
-@keyframes btn_to_dark
-    from
-        background-color: $main_blue
-    to
-        background-color: $dark_blue
-
 .standard_button
     width: 210px
     height: 70px
@@ -14,6 +8,7 @@
     cursor: pointer
     background-color: $main_blue
     color: $main_lightgrey
+    transition-duration: 1.2s
 
 .standard_button:hover
-    animation: btn_to_dark 1.5s forwards
+    background-color: $dark_blue

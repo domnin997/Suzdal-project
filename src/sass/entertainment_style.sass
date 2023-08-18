@@ -6,12 +6,6 @@
     to
         opacity: 100%
 
-@keyframes tab_menu_to_orange
-    from
-        background-color: none
-    to
-        background-color: $main_orange
-
 .entertainment_block
     font-size: 2.1rem
     max-width: 80%
@@ -221,5 +215,6 @@
         border-color: lightgrey
         cursor: pointer
         border-width: 1px
+        transition-duration: 1s
     .tab_menu_button:hover
-        animation: tab_menu_to_orange 1s forwards
+        background-color: $main_orange

@@ -1,0 +1,58 @@
+@import "style_variables.sass"
+
+.city_day_block
+    margin: 0 auto
+    h2
+        text-align: center
+    div
+        text-align: center
+    .bd_slider_container
+        display: grid
+        grid-template-columns: 0.3fr 0.7fr
+    .bd_info_container
+        display: grid
+        gap: 10px
+        grid-template-columns: 0.5fr 0.5fr
+        .bd_history_steps
+            display: grid
+            gap: 8px
+            grid-template-columns: repeat(12, 1fr)
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr
+            .step_1
+                grid-column-start: 1
+                grid-column-end: 13
+                background-color: lightyellow
+            .step_2
+                grid-column-start: 1
+                grid-column-end: 12
+                background-color: lightgreen
+            .step_3
+                grid-column-start: 1
+                grid-column-end: 11
+                background-color: lightblue
+            .step_4
+                grid-column-start: 1
+                grid-column-end: 10
+                background-color: lightgreen
+            .step_5
+                grid-column-start: 1
+                grid-column-end: 9
+                background-color: lightyellow
+            .step_6
+                grid-column-start: 1
+                grid-column-end: 8
+                background-color: red
+
+@media (min-width: 1px) and (max-width: 430px)
+
+@media (min-width: 431px) and (max-width: 768px)
+
+@media (min-width: 769px) and (max-width: 1149px)
+
+@media (min-width: 1150px) and (max-width: 1400px)
+
+@media (min-width: 1401px) and (max-width: 1650px)
+
+@media (min-width: 1651px)
+    .city_day_block
+        max-width: 80%

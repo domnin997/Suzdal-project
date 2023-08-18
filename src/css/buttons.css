@@ -1,1 +1,1 @@
-@keyframes btn_to_dark{from{background-color:#15138a}to{background-color:#5a58e0}}.standard_button{width:210px;height:70px;border:none;border-radius:5px;cursor:pointer;background-color:#15138a;color:#f7f7f7}.standard_button:hover{animation:btn_to_dark 1.5s forwards}
+.standard_button{width:210px;height:70px;border:none;border-radius:5px;cursor:pointer;background-color:#15138a;color:#f7f7f7;transition-duration:1.2s}.standard_button:hover{background-color:#5a58e0}
