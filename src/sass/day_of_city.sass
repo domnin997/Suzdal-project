@@ -9,15 +9,64 @@
     .bd_slider_container
         display: grid
         grid-template-columns: 0.3fr 0.7fr
+        .bd_slider_block
+            .bd_slider_window
+                width: 200px 
+                height: 50px
+                background-color: coral
+            .bd_slider_tape 
+                width: 190px
+                height: 50px
+                background-color: lightblue
+                border-radius: 25px
+                display: flex
+                .bd_slider_handle
+                    width: 50px
+                    height: 50px
+                    background-color: yellow
+                    border-radius: 25px
+                
     .bd_info_container
+        margin-top: 70px
         display: grid
-        gap: 10px
+        gap: 15px
         grid-template-columns: 0.5fr 0.5fr
+        .bd_celebration_info
+            min-height: 300px
+            padding: 15px
+            line-height: 1.5
+            background-color: white
+            border-radius: 8px 0 0 8px 
         .bd_history_steps
             display: grid
             gap: 8px
             grid-template-columns: repeat(12, 1fr)
-            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr
+            .step_container
+                display: flex
+                justify-content: space-between
+                font-size: 1.5rem
+            .step_year
+                width: 120px
+                background-color: white
+                position: relative
+                p
+                    margin: 0 auto
+                    position: absolute                
+                    display: block
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%, -50%)
+            .step_text
+                width: 100%
+                position: relative
+                p
+                    width: 95%
+                    position: absolute
+                    margin: 0 auto
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%, -50%)
             .step_1
                 grid-column-start: 1
                 grid-column-end: 13
