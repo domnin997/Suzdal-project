@@ -266,7 +266,12 @@ function handleMovement (event) {
             if (newLeft<40) {
                 counterContainer.style.cssText = 'height: 100px';
                     setTimeout(()=>{bdCounter.style.cssText = 'display: block'}, 1100);
+                    if (window.matchMedia("(max-width: 768px)").matches) {
+                        setTimeout(()=>{bdInfoContainer.style.cssText = 'height: 850px'}, 1400);
+                    } else {
                         setTimeout(()=>{bdInfoContainer.style.cssText = 'height: 450px'}, 1400);
+                    }
+                        
                             setTimeout(()=>{bdInfo.style.cssText = 'display: block; opacity: 1'}, 1800);
                 
                             steps.forEach((element) => {
