@@ -229,3 +229,34 @@ clearBtn.addEventListener('click', event => {
         setTimeout(function () {recBlockStatus.recBlockDisplayed = false}, 3100); 
     }
 })
+
+// Блок "День города"
+
+const   bdSliderTape = document.querySelector('.bd_slider_tape'),
+        bdSliderWindow = document.querySelector('.bd_slider_window'),
+        bdSliderHandler = document.querySelector('.bd_slider_handle');
+
+let shiftX;
+
+bdSliderHandler.addEventListener('pointerdown', (event) => {
+    shiftX = event.clientX - bdSliderHandler.getBoundingClientRect().x;
+    bdSliderHandler.setPointerCapture(event.pointerId);
+        console.log(shiftX);
+        bdSliderHandler.addEventListener('pointermove', handleMovement);
+})
+
+bdSliderHandler.addEventListener('pointerup', (event) => {
+    bdSliderHandler.removeEventListener('pointermove', handleMovement);
+})
+
+
+function handleMovement (event) {
+    let newLeft = event.clientX - bdSliderWindow.getBoundingClientRect().x - shiftX;
+        if (newLeft < 0) {
+            newLeft = 0;
+        } else if (newLeft > 150) {
+            newLeft = 150;
+        }  
+    console.log(newLeft);
+        bdSliderTape.style.left = newLeft+'px';
+}
