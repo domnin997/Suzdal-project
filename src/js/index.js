@@ -234,7 +234,12 @@ clearBtn.addEventListener('click', event => {
 
 const   bdSliderTape = document.querySelector('.bd_slider_tape'),
         bdSliderWindow = document.querySelector('.bd_slider_window'),
-        bdSliderHandler = document.querySelector('.bd_slider_handle');
+        bdSliderHandler = document.querySelector('.bd_slider_handle'),
+        counterContainer = document.querySelector('.bd_counter_container'),
+        bdCounter = document.querySelector('.bd_counter'),
+        bdInfoContainer = document.querySelector('.bd_info_container'),
+        bdInfo = document.querySelector('.bd_celebration_info'),
+        steps = document.querySelectorAll('.step_container');
 
 let shiftX;
 
@@ -249,14 +254,39 @@ bdSliderHandler.addEventListener('pointerup', (event) => {
     bdSliderHandler.removeEventListener('pointermove', handleMovement);
 })
 
-
+let stepTime = 2000;
 function handleMovement (event) {
     let newLeft = event.clientX - bdSliderWindow.getBoundingClientRect().x - shiftX;
         if (newLeft < 0) {
             newLeft = 0;
         } else if (newLeft > 150) {
             newLeft = 150;
-        }  
-    console.log(newLeft);
+        }
         bdSliderTape.style.left = newLeft+'px';
+            if (newLeft<40) {
+                counterContainer.style.cssText = 'height: 100px';
+                    setTimeout(()=>{bdCounter.style.cssText = 'display: block'}, 1100);
+                        setTimeout(()=>{bdInfoContainer.style.cssText = 'height: 450px'}, 1400);
+                            setTimeout(()=>{bdInfo.style.cssText = 'display: block; opacity: 1'}, 1800);
+                
+                            steps.forEach((element) => {
+                                 setTimeout(()=>{
+                                    element.style.cssText = 'transform: translateX(0)'
+                                }, stepTime)
+                                stepTime += 600;
+                })
+            }
 }
+
+// let step5 = document.querySelector('.step_5'),
+//     step4 = document.querySelector('.step_4');
+
+// function moveStep5 () {
+//     step5.style.cssText = 'transform: translateX(0%)';
+// };
+
+// function moveStep4 () {
+//     step4.style.cssText = 'transform: translateX(0%)';
+// };
+// setTimeout(moveStep5, 2000);
+// setTimeout(moveStep4, 3000)

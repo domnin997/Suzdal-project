@@ -77,60 +77,73 @@
         border: solid
         border-width: 8px
         border-color: white
-        height: 100px
+        height: 0px
+        transition-duration: 1.5s
         position: relative
         p
             margin: 0
-            display: block
+            display: none
             position: absolute
             top: 50%
             left: 50%
             transform: translate(-50%, -50%)
+            transition-duration: 0.5s
     .bd_info_container
         margin-top: 0px
+        height: 0
         display: grid
         gap: 15px
         grid-template-columns: 0.5fr 0.5fr
+        transition-duration: 1s
         .bd_celebration_info
+            display: none
+            opacity: 0
             min-height: 300px
             padding: 15px
             line-height: 1.5
             background-color: white
-            border-radius: 8px 0 0 8px 
+            border-radius: 8px 0 0 8px
+            transition-duration: 2s
         .bd_history_steps
+            overflow: hidden
             display: grid
             gap: 8px
             grid-template-columns: repeat(12, 1fr)
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr
             .step_container
+                width: 100%
+                height: 100%
                 display: flex
                 justify-content: space-between
                 font-size: 1.5rem
-            .step_year
-                width: 120px
-                background-color: white
-                position: relative
-                p
-                    margin: 0 auto
-                    position: absolute                
-                    display: block
-                    left: 50%
-                    top: 50%
-                    transform: translate(-50%, -50%)
-            .step_text
-                width: 100%
-                position: relative
-                p
-                    width: 95%
-                    position: absolute
-                    margin: 0 auto
-                    left: 50%
-                    top: 50%
-                    transform: translate(-50%, -50%)
+                transform: translateX(-100%)
+                transition-duration: 2s
+                .step_year
+                    width: 120px
+                    background-color: white
+                    position: relative
+                    p
+                        margin: 0 auto
+                        position: absolute                
+                        display: block
+                        left: 50%
+                        top: 50%
+                        transform: translate(-50%, -50%)
+                .step_text
+                    width: 100%
+                    position: relative
+                    p
+                        width: 95%
+                        position: absolute
+                        margin: 0 auto
+                        left: 50%
+                        top: 50%
+                        transform: translate(-50%, -50%)
             .step_1
                 grid-column-start: 1
                 grid-column-end: 13
                 background-color: lightyellow
+                
             .step_2
                 grid-column-start: 1
                 grid-column-end: 12
@@ -139,18 +152,18 @@
                 grid-column-start: 1
                 grid-column-end: 11
                 background-color: lightblue
+                
             .step_4
                 grid-column-start: 1
                 grid-column-end: 10
                 background-color: lightgreen
+                
             .step_5
                 grid-column-start: 1
                 grid-column-end: 9
                 background-color: lightyellow
-            .step_6
-                grid-column-start: 1
-                grid-column-end: 8
-                background-color: red
+
+                
 
 
 @media (min-width: 1px) and (max-width: 430px)
