@@ -311,10 +311,21 @@ function yearsCounter () {
 
 const mobileMenu = document.querySelector('.burger_menu'),
       mobileMenuBlock = document.querySelector('.mobile_menu_overlay'),
-      mobileMenuOptions = document.querySelector('.mobile_menu_options');
+      mobileMenuOptions = document.querySelector('.mobile_menu_options'),
+      menuOptions = document.querySelectorAll('.option');
 
-mobileMenu.addEventListener('click', (event) => {
-        mobileMenu.classList.toggle('active');
+function openCloseMobileMenu () {
+    mobileMenu.classList.toggle('active');
             mobileMenuBlock.classList.toggle('active');
                 mobileMenuOptions.classList.toggle('active');
+}
+
+mobileMenu.addEventListener('click', (event) => {
+        openCloseMobileMenu();
+})
+
+menuOptions.forEach((el) => {
+    el.addEventListener('click', (event) => {
+        openCloseMobileMenu();
+    })
 })

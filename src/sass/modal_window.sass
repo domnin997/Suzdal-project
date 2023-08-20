@@ -1,0 +1,31 @@
+@import "style_variables.sass"
+
+.modal_block
+    position: fixed
+    z-index: 9
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: $overlay_grey
+    .modal_window
+        position: fixed
+        z-index: 10
+        width: 500px
+        height: 400px
+        border-radius: 6px
+        background-color: white
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        .modal_form
+            margin: 30% auto 0 auto
+            width: 80%
+            height: 80%
+            label
+                display: block
+                margin: 0 auto
+                text-align: center
+            input
+                display: block
+                margin: 0 auto

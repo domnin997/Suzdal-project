@@ -29,17 +29,6 @@
         </header>
 
         <main>
-            <div class="mobile_menu_block">
-                <div class="mobile_menu_options">
-                    <div class="option_block"> <a href="#arch_header"> Архитектура </a> </div>
-                    <div class="option_block"> <a href="#entertainment_header"> Досуг </a> </div>
-                    <div class="option_block"> <a href="#recommendations_header"> Рекомендации </a> </div>
-                    <div class="option_block"> <a href="#bd_header"> День города </a> </div>
-                </div>
-                <div class="mobile_menu_overlay">
-                    
-                </div>
-            </div>
 
             <section class="greetings_block"> 
                 <h2>Приветствуем вас на сайте Суздаля</h2>
@@ -329,6 +318,32 @@
                     </div>
                 </div>
             </section>
+
+            <div class="mobile_menu_block">
+                <div class="mobile_menu_options">
+                    <div class="option_block"> <a class="option" href="#arch_header"> Архитектура </a> </div>
+                    <div class="option_block"> <a class="option" href="#entertainment_header"> Досуг </a> </div>
+                    <div class="option_block"> <a class="option" href="#recommendations_header"> Рекомендации </a> </div>
+                    <div class="option_block"> <a class="option" href="#bd_header"> День города </a> </div>
+                </div>
+                <div class="mobile_menu_overlay">
+                    
+                </div>
+            </div>
+
+            <div class="modal_block">
+                <div class="modal_window">
+                    <form class="modal_form">
+                        <label for="name">Ваше имя:</label>
+                            <input type="text" name="name" placeholder="Имя" required>
+                        <label for="phone">Номер телефона:</label>
+                            <input type="tel" name="phone" placeholder="Телефон">
+                        <label for="phone">Электронная почта:</label>
+                            <input type="email" name="email" placeholder="Адрес электронной почты" required>
+                    </form>
+                </div>
+            </div>
+
         </main>
         <footer>
             Это подвал.
