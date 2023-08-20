@@ -310,18 +310,11 @@ function yearsCounter () {
 // Блок мобильного меню
 
 const mobileMenu = document.querySelector('.burger_menu'),
-      mobileMenuBlock = document.querySelector('.mobile_menu_block');
-
-      let mobileMenuStatus = {
-        opened: false,
-      }
+      mobileMenuBlock = document.querySelector('.mobile_menu_overlay'),
+      mobileMenuOptions = document.querySelector('.mobile_menu_options');
 
 mobileMenu.addEventListener('click', (event) => {
-    if (!mobileMenuStatus.opened) {
-        mobileMenuBlock.style.cssText = 'display: block';
-            mobileMenuStatus.opened = true;
-    } else if (mobileMenuStatus.opened) {
-        mobileMenuBlock.style.cssText = 'display: none';
-            mobileMenuStatus.opened = false;
-    }
+        mobileMenu.classList.toggle('active');
+            mobileMenuBlock.classList.toggle('active');
+                mobileMenuOptions.classList.toggle('active');
 })

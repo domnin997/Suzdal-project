@@ -40,7 +40,6 @@ header
             position: absolute
             top: 50%
             transform: translateY(-50%)
-            background-color: $main_orange
             transition: 0.5s
         .burger_item::before,
         .burger_item::after
@@ -49,23 +48,28 @@ header
             width: 30px
             height: 4px
             border-radius: 4px
-            background-color: $main_orange
             transition: 0.5s
+            background-color: $main_orange
+    .inactive
+        .burger_item
+            background-color: $main_orange
         .burger_item::before
             top: -8px
         .burger_item::after
             top: 8px
-    div.burger_menu:hover
+            
+    .active
         .burger_item
             background-color: transparent
-    div.burger_menu:hover
         .burger_item::before
             top: 0
             transform: rotate(45deg)
-    div.burger_menu:hover
         .burger_item::after
             top: 0
             transform: rotate(135deg)
+
+            
+
 
 
 @media (max-width: 430px)
