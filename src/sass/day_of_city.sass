@@ -1,6 +1,5 @@
 @import "style_variables.sass"
 
-
 .city_day_block
     margin: 90px auto 0 auto
     h2
@@ -8,13 +7,13 @@
     div
         text-align: center
     .bd_slider_container
-        margin: 70px auto 0 auto
+        margin: 60px auto 0 auto
         border-radius: 10px 10px 0 0 
         background-color: white
         display: grid
         grid-template-rows: 0.5fr 0.5fr
         .bd_slider_text
-            width: 70%
+            width: 80%
             margin: 0 auto
             display: grid
             grid-template-columns: 0.2fr 0.8fr
@@ -24,13 +23,11 @@
             .bd_arrow_container
                 position: relative
                 img
-                    width: 80px
-                    height: 80px
                     object-fit: cover
                     display: block
                     position: absolute 
                     top: 50%
-                    left: 50%
+                    left: 70%
                     transform: translate(-50%, -50%)
             .bd_arrow_text
                 position: relative
@@ -42,8 +39,8 @@
                     left: 50%
                     transform: translate(-50%, -50%)           
         .bd_slider_block
+            margin: 0 auto
             position: relative
-            width: 100%
             height: 100px
             .slider_wrapper
                 position: absolute
@@ -52,30 +49,31 @@
                 transform: translate(-50%, -50%)
                 .bd_slider_window
                     margin: 0 auto
-                    width: 200px 
-                    height: 50px
                     background-color: $main_lightgrey
                     border: solid
                     border-color: $main_orange
-                    border-radius: 25px
+                    border-radius: 999px
                     overflow: hidden
                     position: relative
-                    .bd_slider_tape 
-                        width: 200px
-                        height: 55px
+                    .bd_slider_tape
                         color: white
                         background-color: $main_blue
-                        border-radius: 25px
+                        border-radius: 30px
                         display: flex
                         position: absolute
-                        left: 150px
                         .bd_slider_handle
                             width: 55px
                             height: 55px
                             background-color: $main_orange
-                            border-radius: 50%
+                            border-radius: 25px
                         .bd_slider_handle:hover
                             cursor: pointer
+                        .bd_slider_date
+                            p
+                                display: block
+                                margin-left: 60%
+                                margin-top: 30%
+
     .bd_counter_container
         border: solid
         border-width: 8px
@@ -152,7 +150,6 @@
             .step_1
                 grid-column-start: 1
                 grid-column-end: 13
-                
             .step_2
                 grid-column-start: 1
                 grid-column-end: 12
@@ -166,22 +163,34 @@
                 grid-column-start: 1
                 grid-column-end: 9
 
-
 @media (min-width: 1px) and (max-width: 430px)
     .city_day_block
-        max-width: 80%
+        max-width: 90%
+        .question_block
+            margin-top: 50px
         .bd_slider_container
             padding: 0 10px 0 10px
             grid-template-rows: 0.5fr 0.5fr
             .bd_slider_text
                 .bd_arrow_container
                     img
-                        width: 40px
-                        height: 40px
+                        width: 45px
+                        height: 45px
                 .bd_arrow_text
                     p
-                        font-size: 1rem
-
+                        font-size: 1.3rem
+            .bd_slider_block
+                width: 80%
+                .slider_wrapper
+                    .bd_slider_window
+                        width: 160px 
+                        height: 50px
+                        .bd_slider_tape 
+                            width: 170px
+                            height: 50px
+                            left: 110px
+        .bd_counter_container
+            font-size: 1.9rem
         .bd_info_container
             grid-template-rows: 0.5fr 0.5fr
             .bd_celebration_info
@@ -197,6 +206,25 @@
         .bd_slider_container
             grid-template-rows: 0.5fr 0.5fr
             max-width: 100%
+            .bd_slider_text
+                .db_arrow_container
+                    img
+                        width: 60px
+                        height: 60px
+                .bd_arrow_text
+                    p
+                        font-size: 1.5rem
+            .bd_slider_block
+                width: 80%
+                .slider_wrapper
+                    .bd_slider_window
+                        width: 200px 
+                        height: 50px
+                        .bd_slider_tape 
+                            width: 200px
+                            height: 50px
+        .bd_counter_container
+            font-size: 1.9rem
         .bd_info_container
             grid-template-rows: 0.5fr 0.5fr
             .bd_celebration_info
@@ -211,6 +239,21 @@
         max-width: 80%
         .bd_slider_container
             padding: 0 40px 0 40px
+            .bd_slider_text
+                .db_arrow_container
+                    img
+                        width: 60px
+                        height: 60px
+            .bd_slider_block
+                width: 100%
+                .slider_wrapper
+                    .bd_slider_window
+                        width: 200px 
+                        height: 50px
+                        .bd_slider_tape 
+                            width: 200px
+                            height: 55px
+                            left: 150px
         .bd_info_container
             grid-template-columns: 0.5fr 0.5fr
             .bd_celebration_info
@@ -220,6 +263,23 @@
         max-width: 80%
         .bd_slider_container
             padding: 0 40px 0 40px
+            .bd_slider_text
+                .db_arrow_container
+                    img
+                        width: 60px
+                        height: 60px
+            .bd_slider_block
+                width: 100%
+                .slider_wrapper
+                    .bd_slider_window
+                        width: 200px 
+                        height: 50px
+                        .bd_slider_tape 
+                            width: 200px
+                            height: 55px
+                            left: 150px
+        .bd_counter_container
+            font-size: 2rem
         .bd_info_container
             grid-template-columns: 0.5fr 0.5fr
             .bd_celebration_info
@@ -228,7 +288,24 @@
     .city_day_block
         max-width: 80%
         .bd_slider_container
-            padding: 0 40px 0 40px
+            padding: 0 20px 0 20px
+            .bd_slider_text
+                .bd_arrow_container
+                    img
+                        width: 40px
+                        height: 40px
+            .bd_slider_block
+                width: 100%
+                .slider_wrapper
+                    .bd_slider_window
+                        width: 200px 
+                        height: 50px
+                        .bd_slider_tape 
+                            width: 205px
+                            height: 55px
+                            left: 150px
+        .bd_counter_container
+            font-size: 2.2rem
         .bd_info_container
             grid-template-columns: 0.5fr 0.5fr
             .bd_celebration_info
@@ -238,8 +315,24 @@
         max-width: 80%
         .bd_slider_container
             padding: 0 40px 0 40px
+            .bd_slider_text
+                .bd_arrow_container
+                    img
+                        width: 50px
+                        height: 50px
+            .bd_slider_block
+                width: 100%
+                .slider_wrapper
+                    width: 200px 
+                    height: 50px
+                    .bd_slider_window
+                        width: 200px 
+                        height: 50px
+                        .bd_slider_tape 
+                            width: 210px
+                            height: 50px
+                            left: 150px
+        .bd_counter_container
+            font-size: 2.5rem
         .bd_info_container
             grid-template-columns: 0.5fr 0.5fr
-        
-
-            

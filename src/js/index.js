@@ -257,19 +257,33 @@ bdSliderHandler.addEventListener('pointerup', (event) => {
 let stepTime = 2000;
 function handleMovement (event) {
     let newLeft = event.clientX - bdSliderWindow.getBoundingClientRect().x - shiftX;
-        if (newLeft < 0) {
-            newLeft = 0;
-        } else if (newLeft > 150) {
-            newLeft = 150;
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            if (newLeft < 0) {
+                newLeft = 0;
+            } else if (newLeft > 110) {
+                newLeft = 110;
+            } 
+        } else {
+            if (newLeft < 0) {
+                newLeft = 0;
+            } else if (newLeft > 150) {
+                newLeft = 150;
+            }
         }
         bdSliderTape.style.left = newLeft+'px';
-            if (newLeft<40) {
+            if (newLeft < 60) {
                 counterContainer.style.cssText = 'height: 100px';
                     setTimeout(()=>{bdCounter.style.cssText = 'display: block'}, 1100);
                     if (window.matchMedia("(max-width: 768px)").matches) {
-                        setTimeout(()=>{bdInfoContainer.style.cssText = 'height: 850px'}, 1400);
+                        setTimeout(()=>{
+                            bdInfoContainer.style.cssText = 'height: 850px'
+                            yearsCounter();
+                        }, 1400);
                     } else {
-                        setTimeout(()=>{bdInfoContainer.style.cssText = 'height: 450px'}, 1400);
+                        setTimeout(()=>{
+                            bdInfoContainer.style.cssText = 'height: 450px'
+                            yearsCounter();
+                        }, 1400);
                     }
                         
                             setTimeout(()=>{bdInfo.style.cssText = 'display: block; opacity: 1'}, 1800);
@@ -283,15 +297,31 @@ function handleMovement (event) {
             }
 }
 
-// let step5 = document.querySelector('.step_5'),
-//     step4 = document.querySelector('.step_4');
+let years = 0;
+function yearsCounter () {
+    setInterval(() => {
+        if (years < 1000) {
+            years += 1;
+                bdCounter.innerHTML = `${years} лет`;
+        }
+    }, 50)
+}
 
-// function moveStep5 () {
-//     step5.style.cssText = 'transform: translateX(0%)';
-// };
+// Блок мобильного меню
 
-// function moveStep4 () {
-//     step4.style.cssText = 'transform: translateX(0%)';
-// };
-// setTimeout(moveStep5, 2000);
-// setTimeout(moveStep4, 3000)
+const mobileMenu = document.querySelector('.burger_menu'),
+      mobileMenuBlock = document.querySelector('.mobile_menu_block');
+
+      let mobileMenuStatus = {
+        opened: false,
+      }
+
+mobileMenu.addEventListener('click', (event) => {
+    if (!mobileMenuStatus.opened) {
+        mobileMenuBlock.style.cssText = 'display: block';
+            mobileMenuStatus.opened = true;
+    } else if (mobileMenuStatus.opened) {
+        mobileMenuBlock.style.cssText = 'display: none';
+            mobileMenuStatus.opened = false;
+    }
+})
