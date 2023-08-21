@@ -52,7 +52,7 @@
                         </div>
                         <p>Желаем увлекательного путешествия, и будем рады увидеть вас в городе.</p>
                 </div>
-                    <button class="standard_button">
+                    <button class="standard_button open_modal">
                         Получить консультацию
                     </button>
                 <p class="consultation_info">Оставьте ваши контактные данные, чтобы получить персональную консультацию.</p>
@@ -333,13 +333,15 @@
 
             <div class="modal_block">
                 <div class="modal_window">
+                    <span class="modal_close_button">&#10006;</span>
+                    <div class="modal_description">
+                        Оставьте ваши данные, и наш сотрудник свяжется с вами в ближайшее время.
+                    </div>
                     <form class="modal_form">
-                        <label for="name">Ваше имя:</label>
-                            <input type="text" name="name" placeholder="Имя" required>
-                        <label for="phone">Номер телефона:</label>
-                            <input type="tel" name="phone" placeholder="Телефон">
-                        <label for="phone">Электронная почта:</label>
-                            <input type="email" name="email" placeholder="Адрес электронной почты" required>
+                        <input type="text" name="name" placeholder="Имя" required>
+                        <input type="tel" name="phone" placeholder="Номер телефона">
+                        <input type="email" name="email" placeholder="Адрес электронной почты" required>
+                        <input class="input_submit" type="submit"></input>
                     </form>
                 </div>
             </div>

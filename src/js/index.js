@@ -329,3 +329,25 @@ menuOptions.forEach((el) => {
         openCloseMobileMenu();
     })
 })
+
+// Блок модального окна
+
+const modalBlock = document.querySelector('.modal_block'),
+      openModalBtn = document.querySelectorAll('.open_modal');
+
+openModalBtn.forEach((el) => {
+    el.addEventListener('click', (event) => {
+        event.preventDefault();
+            modalBlock.classList.add('active');
+    })
+})
+
+function hideModalBlock () {
+    modalBlock.classList.remove('active');
+}
+
+modalBlock.addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal_close_button') || event.target.classList.contains('modal_block')) {
+        hideModalBlock();
+    }
+})
