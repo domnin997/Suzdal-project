@@ -7,7 +7,6 @@
         opacity: 100%
 
 .entertainment_block
-    font-size: 2.1rem
     max-width: 80%
     margin: 80px auto 0 auto
     h2
@@ -46,8 +45,6 @@
                 .tab_descr_header
                     font-weight: 600
 
-
-
 @media (min-width: 431px)
     .entertainment_block
         max-width: 90%
@@ -72,10 +69,13 @@
                     border-radius: 5px
                     font-size: 1.4rem
 
-
 @media (min-width: 1px) and (max-width: 430px)
     .entertainment_block
         max-width: 90%
+        h2
+            font-size: 3rem
+        .entertainment_intro
+            font-size: 1.8rem
         .tabs_wrapper
             .tab
                 img
@@ -89,6 +89,7 @@
                     transform: translateX(-50%)
                     top: 36%
                     width: 280px
+                    box-shadow: $main_img_shadow
             .tab_menu
                 left: 50%
                 top: 88%
@@ -101,6 +102,10 @@
 @media (min-width: 431px) and (max-width: 768px)
     .entertainment_block
         max-width: 90%
+        h2
+            font-size: 3rem
+        .entertainment_intro
+            font-size: 1.7rem
         .tabs_wrapper
             .tab
                 img
@@ -114,33 +119,48 @@
                     transform: translateX(-50%)
                     top: 48%
                     width: 430px
+                    box-shadow: $main_img_shadow
             .tab_menu
                 left: 50%
-                top: 88%
+                top: 92%
                 transform: translateX(-50%)
                 flex-direction: row
                 .tab_menu_button
                     height: 25px
                     width: 25px
 
+@media (min-width: 1024px) and (max-width: 1400px)
+    .entertainment_block
+        h2
+            font-size: 3rem
+        .entertainment_intro
+            font-size: 1.8rem
+
 @media (min-width: 769px) and (max-width: 1149px)
-    .tab
-        img
+    .entertainment_block
+        max-width: 90%
+        h2
+            font-size: 3rem
+        .entertainment_intro
+            font-size: 1.7rem
+    .tabs_wrapper
+        .tab
+            img
+                top: 10%
+                left: 5%
+                width: 500px
+                height: 300px
+            .tab_descr
+                left: 30%
+                top: 55%
+                width: 200px
+        .tab_menu
             top: 10%
-            left: 5%
-            width: 500px
-            height: 300px
-        .tab_descr
-            left: 30%
-            top: 55%
-            width: 200px
-    .tab_menu
-        top: 10%
-        left: 88%
-        flex-direction: column
-        .tab_menu_button
-            width: 15px
-            height: 15px
+            left: 88%
+            flex-direction: column
+            .tab_menu_button
+                width: 15px
+                height: 15px
 
 @media (min-width: 1150px) and (max-width: 1400px)
     .tab
@@ -162,26 +182,32 @@
             height: 15px
 
 @media (min-width: 1401px) and (max-width: 1650px)
-    .tab
-        img
-            width: 600px
-            height: 350px
-            top: 10%
-            left: 13%
-        .tab_descr
-            left: 40%
-            top: 60%
-            width: 400px
-    .tab_menu
-        left: 76%
-        top: 10%
-        flex-direction: column
-        .tab_menu_button
-            width: 15px
-            height: 15px
+    .entertainment_block
+        h2
+            font-size: 3.5rem
+        .tabs_wrapper
+            .tab
+                img
+                    width: 600px
+                    height: 350px
+                    top: 10%
+                    left: 13%
+                .tab_descr
+                    left: 40%
+                    top: 60%
+                    width: 400px
+            .tab_menu
+                left: 76%
+                top: 10%
+                flex-direction: column
+                .tab_menu_button
+                    width: 15px
+                    height: 15px
 
 @media (min-width: 1651px) 
     .entertainment_block
+        h2
+            font-size: 3.5rem
         margin-bottom: 150px
         .tabs_wrapper
             .tab

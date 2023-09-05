@@ -3,6 +3,13 @@
 @media (max-width: 430px)
     .arch_block
         max-width: 90%
+        h2
+            font-size: 3rem
+        .arch_intro
+            p
+                margin-top: 50px
+        .arch_examples
+            margin-top: 70px
         .arch_examples
             grid-template-rows: 0.5fr 1fr 0.3fr
             grid-template-columns: 1fr
@@ -20,10 +27,14 @@
                 img
                     margin-top: 10px
                     width: 50px
-                    height: 50px   
+                    height: 50px
+        .arch_afterwords
+            margin-top: 60px  
     
 @media (min-width: 431px)
     .arch_block
+        h2
+            font-size: 2.6rem
         max-width: 80%
         .arch_examples
             grid-template-columns: 2fr 0.3fr 200px 0.3fr
@@ -40,10 +51,17 @@
     
 @media (min-width: 769px)
     .arch_block
+        h2
+            font-size: 2.8rem
         max-width: 80%
         .arch_examples
             .arch_examples_slider
                 max-width: 300px
+                .arch_tape
+                    .arch_ex
+                        .arch_desc
+                            margin-top: 15px
+                            font-size: 1.7rem
             grid-template-columns: 2fr 0.3fr 300px 0.3fr
             .desktop_only
                 img.arrow
@@ -84,28 +102,25 @@
     line-height: 1.8
     span
         color: $main_orange
-
-
-.arch_examples
-    padding: 30px 0 30px 0
-    margin: 40px 0 40px 0
-    border-radius: 5px
-    background-color: white
-    display: grid
-    box-shadow: $main_img_shadow
-    
-    justify-content: space-around
-    position: relative
-    .arch_examples_text
+    .arch_examples
+        padding: 30px 0 30px 0
+        margin: 40px 0 40px 0
+        border-radius: 5px
+        background-color: white
+        display: grid
+        box-shadow: $main_img_shadow
+        justify-content: space-around
         position: relative
-        p
-            padding: 0
-            margin: 0
-            width: 100%
-            position: absolute
-            top: 50%
-            left: 50%
-            transform: translate(-50%,-50%)
+        .arch_examples_text
+            position: relative
+            p
+                padding: 0
+                margin: 0
+                width: 100%
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
  
 
 .arch_examples_slider

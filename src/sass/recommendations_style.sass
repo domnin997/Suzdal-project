@@ -204,9 +204,14 @@
 .rec_element_fading
     animation: disappearing 1.5s forwards
 
-@media (min-width: 1px) and (max-width: 430px)
+@media (min-width: 1px) and (max-width: 768px)
     .recommendations_block
         max-width: 90%
+        h2
+            font-size: 3rem
+        .recommendations_intro
+            font-size: 1.7rem
+            line-height: 1.5
         form
             .radio_container
                 grid-template-rows: 1fr 1fr 1fr
@@ -215,13 +220,12 @@
                     padding-top: 10px
                     height: 26px
                     width: 240px
-                    font-size: 1rem
+                    font-size: 1.2rem
             .confirm_button_container
                 .rec_button
                     height: 50px
                     width: 150px
-                    font-size: 1rem
-
+                    font-size: 1.2rem
         .rec_element_container
             padding: 10px
             max-width: 280px
@@ -238,6 +242,25 @@
 @media (min-width: 431px) and (max-width: 768px)
     .recommendations_block
         max-width: 90%
+        h2
+            font-size: 3rem
+        .recommendations_intro
+            font-size: 1.7rem
+        form
+            .radio_container
+                max-width: 90%
+                grid-template-rows: 1fr 1fr 1fr
+                gap: 10px
+                .button_container label
+                    padding-top: 16px
+                    height: 32px
+                    width: 300px
+                    font-size: 1.3rem
+            .confirm_button_container
+                .rec_button
+                    height: 60px
+                    width: 180px
+                    font-size: 1.3rem
         .recommendation_container
             font-size: 1.4rem
             grid-template-rows: 1fr 1fr 1fr
@@ -255,20 +278,6 @@
                     padding: 15px 12px 15px 12px
                 .rec_text
                     padding: 12px
-        form
-            .radio_container
-                max-width: 90%
-                grid-template-rows: 1fr 1fr 1fr
-                gap: 10px
-                .button_container label
-                    height: 40px
-                    width: 300px
-                    font-size: 1.3rem
-            .confirm_button_container
-                .rec_button
-                    height: 60px
-                    width: 180px
-                    font-size: 1.3rem
 
 @media (min-width: 769px) and (max-width: 1149px)
     .recommendations_block
@@ -325,6 +334,8 @@
 @media (min-width: 1401px) and (max-width: 1650px)
     .recommendations_block
         max-width: 80%
+        h2
+            font-size: 3.5rem
         .recommendation_container
             margin: 50px auto 0 auto
             max-width: 90%
@@ -358,6 +369,8 @@
     .recommendations_block
         margin: 0 auto
         max-width: 80%
+        h2
+            font-size: 3.5rem
         .recommendation_container
             font-size: 1.5rem
             grid-template-columns: 1fr 1fr 1fr

@@ -1,1 +1,1 @@
-footer{margin:70px auto 0 auto;max-width:90%;border-radius:5px 5px 0 0;height:200px;background-color:#b5b5b5}
+footer{margin:120px auto 0 auto;max-width:90%;border-radius:5px 5px 0 0;height:200px;background-color:#c8c8c8;position:relative}footer div{position:absolute;left:50%;top:70%;transform:translateX(-50%);color:#6e6e6e}@media(min-width: 1px){footer{max-width:100%;font-size:1.2rem;border-radius:0}}@media(min-width: 431px){footer{max-width:90%;border-radius:5px 5px 0 0}}@media(min-width: 1400px){footer{font-size:1.5rem}}

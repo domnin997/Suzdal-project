@@ -6,15 +6,6 @@ const archPic = document.querySelectorAll('.arch_pic'),
 
 let   width = window.getComputedStyle(sliderWindow).width;
 
-// Блок слайдера из раздела "Архитектура"
-setSlideSize();
-
-let sliderIndex = 1,
-    offset = 0;
-
-archTape.style.width = archSlides.length * 100 + '%';
-archTape.style.transition = '0.5s all';
-
 function setSlideSize () {
     width = window.getComputedStyle(sliderWindow).width;
     archSlides.forEach (element => {
@@ -22,8 +13,16 @@ function setSlideSize () {
     })
 }
 
+// Блок слайдера из раздела "Архитектура"
+
+setSlideSize(); 
+
+archTape.style.width = archSlides.length * 100 + '%';
+archTape.style.transition = '0.5s all';
+
+let offset = 0;
+
 arrowContainer.forEach(element => {
-    
     element.addEventListener('click', (event) => {
         
         if (event.target.classList.contains('left_arrow')) {
@@ -32,23 +31,21 @@ arrowContainer.forEach(element => {
             } else {
                 offset -= +width.slice(0, width.length - 2);
             }
-
             archTape.style.transform = `translateX(-${offset}px)`;
+        } 
         
-        } else if (event.target.classList.contains('right_arrow')) {
+        else if (event.target.classList.contains('right_arrow')) {
             if (offset == +width.slice(0, width.length - 2) * (archSlides.length - 1)) {
                 offset = 0;
              } else {
                   offset += +width.slice(0, width.length - 2);
               }
-
               archTape.style.transform = `translateX(-${offset}px)`;
         }
-
         })
     })
 
-// Блок корректировки размера картинок при изменении размера экрана
+// Блок корректировки размера картинок слайдера архитектуры при изменении размера экрана
 
 window.addEventListener('resize', (e) => {
     
@@ -64,8 +61,7 @@ window.addEventListener('resize', (e) => {
         archPic.forEach((el) => {
             if (el.style !== 'width: 270px; height: 270px') {
                 el.style = 'width: 270px; height: 270px'
-            }
-            
+            } 
         })
     }
 });
@@ -84,13 +80,12 @@ const tabs = document.querySelectorAll('.tab'),
             tabMenuOptions.forEach((el) => {
                 el.classList.remove('selected');
             })
-            element.classList.add('selected');
+                element.classList.add('selected');
 
             tabs.forEach((element) => {
                 element.classList.add('not_displayed');
             });
-            
-            tabs[index].classList.remove('not_displayed');
+                tabs[index].classList.remove('not_displayed');
 
         })
       })
@@ -109,12 +104,6 @@ const churchesBtn = document.querySelector('#recommendation_choice_1'),
       recConfirmBtn = document.querySelector('.confirm_button'),
       clearBtn = document.querySelector('.clear_button');
 
-let recCardsStatus = {
-    churchesShowed: false,
-    civilShowed: false,
-    cuisineShowed: false,
-}
-
 let recBlockStatus = {
     recBlockDisplayed: false,
 }
@@ -125,30 +114,23 @@ function smoothAppearance (elem) {
 
 function buildRecElements (database) {
     recContainer.innerHTML = ' ';
-    let newBlock = document.createElement('div');
-        let newElements = database.map((el) => {
+        database.map((el) => {
             let element = document.createElement('div');
+                element.classList.add('rec_element_container');
+
                 element.innerHTML = `<div class="img_container">
                                         <img src="${el.src}" alt="rec_picture"> </img>
                                     </div>
                                     <div class="rec_header"><b>${el.name}</b></div>
                                     <div class="rec_text">${el.description}</div>`
                 
-                element.classList.add('rec_element_container');
-                
                 recContainer.append(element);
-                
                 setTimeout(smoothAppearance, 500, element);
         })
-    setTimeout(() => {recBlockStatus.recBlockDisplayed = true}, 1500)
+    
+        setTimeout(() => {recBlockStatus.recBlockDisplayed = true}, 1500)
 }
 
-function toggleStatus (trueString) {
-    for (let [key, value] of Object.entries(recCardsStatus)) {
-        recCardsStatus.key = false;
-    }
-        trueString = true;
-}
 
 recConfirmBtn.addEventListener('click', event => {
     
@@ -159,62 +141,52 @@ recConfirmBtn.addEventListener('click', event => {
     if (churchesBtn.checked || civilBtn.checked || kitchenBtn.checked && (!recBlockStatus.recBlockDisplayed)) {
         recContainer.style.cssText = ' ';
             if (window.matchMedia("(max-width: 768px)").matches) {
+                
                 recContainer.classList.remove('recommendations_block_hidden_mobile');
                 recContainer.classList.add('recommendations_block_showed_mobile', 'mark');
-            } else {
-                recContainer.classList.remove('recommendations_block_hidden');
-                recContainer.classList.add('recommendations_block_showed', 'mark');
-            }
-            
-            // recConfirmBtn.classList.add('show_btn_clicked');
-            if (window.matchMedia("(max-width: 768px)").matches) {
+
                 recConfirmBtn.style.cssText = 'animation: show_btn_move_mobile 1.5s forwards';
                 clearBtn.style.cssText = 'animation: clear_btn_move_mobile 1.5s forwards';
+
             } else {
+                
+                recContainer.classList.remove('recommendations_block_hidden');
+                recContainer.classList.add('recommendations_block_showed', 'mark');
+
                 recConfirmBtn.style.cssText = 'animation: show_btn_move 1.5s forwards';
                 clearBtn.style.cssText = 'animation: clear_btn_move 1.5s forwards';
             }
+            
     }
 
     if (churchesBtn.checked) {
-        if (!recCardsStatus.churchesShowed) {
-            toggleStatus(recCardsStatus.churchesShowed);
             buildRecElements(churchesDB);
-        }
     }
 
     if (civilBtn.checked) {
-        if (!recCardsStatus.civilShowed) {
-            toggleStatus(recCardsStatus.civilShowed);
             buildRecElements(civilDB);
-        }
     }
 
     if (kitchenBtn.checked) {
-        if (!recCardsStatus.cuisineShowed) {
-            toggleStatus(recCardsStatus.cuisineShowed);
             buildRecElements(cuisineDrinksDB);
-        }
     }
 }
-    console.log(recBlockStatus.recBlockDisplayed) 
-    
 })
 
 clearBtn.addEventListener('click', event => {
     event.preventDefault();
     if (recBlockStatus.recBlockDisplayed) {
         recContainer.classList.remove('mark');
-        document.querySelectorAll('.rec_element_container').forEach(el => {
-            el.style.cssText = 'display: block; animation: disappearing 1.5s forwards';
-        })
+            document.querySelectorAll('.rec_element_container').forEach(el => {
+                el.style.cssText = 'display: block; animation: disappearing 1.5s forwards';
+            })
 
         setTimeout(function () {
             document.querySelectorAll('.rec_element_container').forEach(el => {
                 el.style.cssText = 'display: none'
         })}, 1500);
         
-        setTimeout(function(){
+        setTimeout(function () {
             
             if (window.matchMedia("(max-width: 768px)").matches) {
                 recContainer.classList.add('recommendations_block_hidden_mobile');
@@ -224,6 +196,7 @@ clearBtn.addEventListener('click', event => {
                 recContainer.classList.remove('recommendations_block_showed', 'mark');
             }
         }, 1600)
+
         recConfirmBtn.style.cssText = 'animation: show_btn_move_right 1.5s forwards';
         clearBtn.style.cssText = 'animation: clear_btn_move_left 1.5s forwards';
         setTimeout(function () {recBlockStatus.recBlockDisplayed = false}, 3100); 
@@ -246,7 +219,6 @@ let shiftX;
 bdSliderHandler.addEventListener('pointerdown', (event) => {
     shiftX = event.clientX - bdSliderHandler.getBoundingClientRect().x;
     bdSliderHandler.setPointerCapture(event.pointerId);
-        console.log(shiftX);
         bdSliderHandler.addEventListener('pointermove', handleMovement);
 })
 
