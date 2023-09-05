@@ -1,0 +1,14 @@
+.standard_button {
+  width: 210px;
+  height: 70px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(21, 19, 138);
+  color: rgb(247, 247, 247);
+  transition-duration: 1.2s;
+}
+
+.standard_button:hover {
+  background-color: rgb(90, 88, 224);
+}

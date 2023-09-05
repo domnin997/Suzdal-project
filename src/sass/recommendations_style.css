@@ -1,0 +1,458 @@
+@keyframes btn_coloring {
+  from {
+    background-color: rgb(21, 19, 138);
+  }
+  to {
+    background-color: rgb(90, 88, 224);
+  }
+}
+@keyframes btn_fading {
+  from {
+    background-color: rgb(90, 88, 224);
+  }
+  to {
+    background-color: rgb(21, 19, 138);
+  }
+}
+@keyframes block_appearing {
+  from {
+    min-height: 0px;
+  }
+  to {
+    min-height: 500px;
+  }
+}
+@keyframes block_disappearing {
+  from {
+    min-height: 500px;
+  }
+  to {
+    min-height: 0px;
+  }
+}
+@keyframes block_appearing_mobile {
+  from {
+    min-height: 0px;
+  }
+  to {
+    min-height: 1300px;
+  }
+}
+@keyframes block_disappearing_mobile {
+  from {
+    min-height: 1300px;
+  }
+  to {
+    min-height: 0px;
+  }
+}
+@keyframes appearing {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes disappearing {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+@keyframes show_btn_move {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 35%;
+  }
+}
+@keyframes show_btn_move_mobile {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 25%;
+  }
+}
+@keyframes show_btn_move_right {
+  from {
+    left: 35%;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes clear_btn_move {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 65%;
+  }
+}
+@keyframes clear_btn_move_mobile {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 75%;
+  }
+}
+@keyframes clear_btn_move_left {
+  from {
+    left: 65%;
+  }
+  to {
+    left: 50%;
+  }
+}
+.recommendations_block_showed {
+  animation: block_appearing 1s forwards;
+}
+
+.recommendations_block_hidden {
+  animation: block_disappearing 1s forwards;
+}
+
+.recommendations_block_showed_mobile {
+  animation: block_appearing_mobile 1.5s forwards;
+}
+
+.recommendations_block_hidden_mobile {
+  animation: block_disappearing_mobile 1.5s forwards;
+}
+
+.recommendations_block {
+  min-height: 500px;
+  margin: 85px auto 0 auto;
+  padding: 20px 0 20px 0;
+}
+.recommendations_block h2 {
+  text-align: center;
+  margin: 0 auto;
+}
+.recommendations_block .recommendations_intro {
+  margin-top: 60px;
+  text-align: center;
+}
+.recommendations_block .recommendations_intro .rec_intro_2 {
+  margin: 50px 0 50px 0;
+}
+.recommendations_block form .radio_container {
+  margin: 50px auto 0 auto;
+  max-width: 85%;
+  display: grid;
+  justify-content: space-around;
+}
+.recommendations_block form .radio_container .button_container label {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  height: 50px;
+  width: 250px;
+  text-align: center;
+  font-size: 1.8rem;
+  padding-top: 25px;
+  border-radius: 6px;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: rgb(21, 19, 138);
+  transition-duration: 1s;
+}
+.recommendations_block form .radio_container .button_container label:hover {
+  background-color: rgb(90, 88, 224);
+}
+.recommendations_block form .radio_container .button_container input[type=radio] {
+  display: none;
+}
+.recommendations_block form .confirm_button_container {
+  position: relative;
+  height: 80px;
+  width: 100%;
+}
+.recommendations_block form .confirm_button_container .rec_button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border: none;
+  display: block;
+  cursor: pointer;
+  height: 70px;
+  width: 250px;
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 50px auto 0 auto;
+  border-radius: 6px;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: rgb(21, 19, 138);
+  transition-duration: 1s;
+}
+.recommendations_block form .confirm_button_container .rec_button:hover {
+  background-color: rgb(90, 88, 224);
+}
+.recommendations_block form .confirm_button_container .clear_button {
+  z-index: 1;
+}
+.recommendations_block .recommendation_container {
+  margin: 50px auto 0 auto;
+  max-width: 90%;
+  font-size: 1.5rem;
+  display: grid;
+  justify-content: center;
+}
+.recommendations_block .recommendation_container .rec_element_container {
+  border-radius: 5px;
+  margin: 50px auto 0 auto;
+  padding: 5px;
+  background-color: white;
+  display: none;
+  box-shadow: 6px 5px 18px 5px rgba(150, 150, 150, 0.5);
+}
+.recommendations_block .recommendation_container .rec_element_container .img_container img {
+  display: block;
+  margin: 10px auto 0 auto;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recommendations_block .recommendation_container .rec_element_container .rec_header {
+  padding: 15px 12px 15px 12px;
+}
+.recommendations_block .recommendation_container .rec_element_container .rec_text {
+  padding: 0 10px 0 10px;
+}
+.recommendations_block .ask_recommendation label:hover {
+  background-color: yellow;
+}
+
+.ask_recommendation input[type=radio]:checked + label {
+  background-color: rgb(90, 88, 224);
+}
+
+.show_btn_clicked {
+  animation: show_btn_move 1.5s forwards;
+}
+
+.moved:hover {
+  animation: btn_coloring 1s forwards;
+}
+
+.clear_button {
+  animation: btn_coloring 1s forwards;
+}
+
+.displayed {
+  display: block;
+  animation: block_appearing 1.5s forwards;
+}
+
+.rec_element_fading {
+  animation: disappearing 1.5s forwards;
+}
+
+@media (min-width: 1px) and (max-width: 430px) {
+  .recommendations_block {
+    max-width: 90%;
+  }
+  .recommendations_block form .radio_container {
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .recommendations_block form .radio_container .button_container label {
+    padding-top: 10px;
+    height: 26px;
+    width: 240px;
+    font-size: 1rem;
+  }
+  .recommendations_block form .confirm_button_container .rec_button {
+    height: 50px;
+    width: 150px;
+    font-size: 1rem;
+  }
+  .recommendations_block .rec_element_container {
+    padding: 10px;
+    max-width: 280px;
+    max-height: 500px;
+  }
+  .recommendations_block .rec_element_container .img_container img {
+    width: 260px;
+    height: 200px;
+  }
+  .recommendations_block .rec_element_container .rec_header {
+    padding: 15px 12px 15px 12px;
+  }
+  .recommendations_block .rec_element_container .rec_text {
+    padding: 12px;
+  }
+}
+@media (min-width: 431px) and (max-width: 768px) {
+  .recommendations_block {
+    max-width: 90%;
+  }
+  .recommendations_block .recommendation_container {
+    font-size: 1.4rem;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+  }
+  .recommendations_block .recommendation_container .rec_element_container {
+    padding: 5px;
+    max-width: 450px;
+    max-height: 380px;
+    margin: 30px auto 0 auto;
+  }
+  .recommendations_block .recommendation_container .rec_element_container .img_container img {
+    width: 380px;
+    height: 200px;
+  }
+  .recommendations_block .recommendation_container .rec_element_container .rec_header {
+    padding: 15px 12px 15px 12px;
+  }
+  .recommendations_block .recommendation_container .rec_element_container .rec_text {
+    padding: 12px;
+  }
+  .recommendations_block form .radio_container {
+    max-width: 90%;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .recommendations_block form .radio_container .button_container label {
+    height: 40px;
+    width: 300px;
+    font-size: 1.3rem;
+  }
+  .recommendations_block form .confirm_button_container .rec_button {
+    height: 60px;
+    width: 180px;
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1149px) {
+  .recommendations_block {
+    width: 100%;
+  }
+  .recommendations_block .recommendation_container {
+    font-size: 1.4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .recommendations_block .recommendation_container .rec_element_container {
+    max-width: 240px;
+    min-height: 300px;
+  }
+  .recommendations_block .recommendation_container .rec_element_container .img_container img {
+    width: 220px;
+    height: 200px;
+  }
+  .recommendations_block form .radio_container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .recommendations_block form .radio_container .button_container label {
+    height: 40px;
+    width: 200px;
+    font-size: 1.6rem;
+  }
+  .recommendations_block form .confirm_button_container .rec_button {
+    height: 60px;
+    width: 200px;
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1150px) and (max-width: 1400px) {
+  .recommendations_block {
+    max-width: 80%;
+  }
+  .recommendations_block .recommendation_container {
+    font-size: 1.4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .recommendations_block .recommendation_container .rec_element_container {
+    max-width: 210px;
+    max-height: 450px;
+  }
+  .recommendations_block .recommendation_container .rec_element_container .img_container img {
+    width: 200px;
+    height: 140px;
+  }
+  .recommendations_block form .radio_container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .recommendations_block form .radio_container .button_container label {
+    height: 40px;
+    width: 200px;
+    font-size: 1.6rem;
+  }
+  .recommendations_block form .confirm_button_container .rec_button {
+    height: 60px;
+    width: 200px;
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1401px) and (max-width: 1650px) {
+  .recommendations_block {
+    max-width: 80%;
+  }
+  .recommendations_block .recommendation_container {
+    margin: 50px auto 0 auto;
+    max-width: 90%;
+    font-size: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .recommendations_block .recommendation_container .rec_element_container {
+    max-width: 250px;
+    max-height: 440px;
+  }
+  .recommendations_block .recommendation_container .rec_element_container .img_container img {
+    width: 230px;
+    height: 150px;
+  }
+  .recommendations_block form .radio_container {
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .recommendations_block form .radio_container .button_container label {
+    height: 35px;
+    width: 190px;
+    padding-top: 20px;
+    font-size: 1.5rem;
+  }
+  .recommendations_block form .confirm_button_container .rec_button {
+    height: 60px;
+    width: 190px;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1651px) {
+  .recommendations_block {
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .recommendations_block .recommendation_container {
+    font-size: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .recommendations_block .recommendation_container .rec_element_container {
+    max-width: 320px;
+    max-height: 420px;
+  }
+  .recommendations_block .recommendation_container .rec_element_container .img_container img {
+    width: 300px;
+    height: 150px;
+  }
+  .recommendations_block form .radio_container {
+    margin: 0 auto;
+    max-width: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

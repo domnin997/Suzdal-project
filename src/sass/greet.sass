@@ -1,3 +1,4 @@
+@import "style_variables.sass"
 @media (max-width: 430px)
     .greetings_block
         margin: 5vh auto
@@ -20,12 +21,14 @@
 
 @media (min-width: 431px)
     .greetings_block
-        width: 70%
+        width: 80%
         padding-bottom: 10px
         margin: 50px auto 0 auto
         .about_block
+            margin-top: 40px
             background-color: white
             border-radius: 7px
+            box-shadow: $main_img_shadow
             p
                 margin: 2vh 0 4vh 0
             p.mobile_only
@@ -61,24 +64,48 @@
                         img
                             width: 55px
                             height: 55px
-    
-.greetings_block
-    button
-        margin-top: 45px
-    .consultation_info
-        font-size: 1.6rem
-        margin-top: 35px
 
+@media (min-width: 768px)
+    .greetings_block
+        .about_block
+            font-size: 1.7rem
+            .desktop_only
+                .about_line
+                    font-size: 1.5rem
+
+@media (min-width: 1024px)
+    .greetings_block
+        width: 80%
+        .about_block
+            margin-top: 50px
+            font-size: 1.8rem
+            .desktop_only
+                .about_line
+                    font-size: 1.6rem
+
+@media (min-width: 1400px)
+    .greetings_block
+        .about_block
+            font-size: 2rem
+            .desktop_only
+                .about_line
+                    font-size: 2rem
+    
 .greetings_block
     min-height: 80vh
     text-align: center
-    div
-        line-height: 1.8
     .about_block
         padding: 10px 0 10px 0
+    div
+        line-height: 1.8
     div.info_icons
         width: 70%
         margin: 0 auto 30px auto
         justify-content: space-around
         img
             display: block
+    button
+        margin-top: 45px
+    .consultation_info
+        font-size: 1.6rem
+        margin-top: 35px

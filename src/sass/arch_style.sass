@@ -1,4 +1,5 @@
 @import "style_variables.sass"
+
 @media (max-width: 430px)
     .arch_block
         max-width: 90%
@@ -19,35 +20,68 @@
                 img
                     margin-top: 10px
                     width: 50px
-                    height: 50px
-                    box-shadow: $main_img_shadow
+                    height: 50px   
     
 @media (min-width: 431px)
     .arch_block
+        max-width: 80%
         .arch_examples
-            grid-template-columns: 2fr 0.3fr 300px 0.3fr
+            grid-template-columns: 2fr 0.3fr 200px 0.3fr
             grid-template-rows: none
+            .arch_examples_slider
+                max-width: 220px
+            .desktop_only
+                img.arrow
+                    margin-top: 100px
+                    cursor: pointer
+                    z-index: 8
             .mobile_only
                 display: none
-            
-@media (min-width: 431px) and (max-width: 768)
-    .arch_block
-        max-width: 80%
     
 @media (min-width: 769px)
     .arch_block
         max-width: 80%
+        .arch_examples
+            .arch_examples_slider
+                max-width: 300px
+            grid-template-columns: 2fr 0.3fr 300px 0.3fr
+            .desktop_only
+                img.arrow
+                    margin-top: 143px
+        .arch_intro, p
+            font-size: 1.7rem
     
 @media (min-width: 1024px)
     .arch_block
-        max-width: 80%
+        h2
+            font-size: 3rem
+        .arch_intro, p
+            font-size: 2rem
+        .arch_intro
+            margin-top: 40px
+            p
+                margin-top: 50px
+        .arch_examples
+            margin-top: 60px
+        .arch_afterwords
+            margin-top: 60px
+            max-width: 80%
+            display: block
+            margin: 0 auto
+        .arch_intro, p
+            font-size: 1.8rem
 
+@media (min-width: 1400px)
+    .arch_block
+        h2
+            font-size: 3.5rem
+        .arch_intro, p
+            font-size: 2rem
+            
 .arch_block
     margin: 0 auto
     text-align: center
     line-height: 1.8
-    p
-        margin-top: 25px
     span
         color: $main_orange
 
@@ -58,6 +92,7 @@
     border-radius: 5px
     background-color: white
     display: grid
+    box-shadow: $main_img_shadow
     
     justify-content: space-around
     position: relative
@@ -74,7 +109,6 @@
  
 
 .arch_examples_slider
-    max-width: 300px
     overflow: hidden
     
 
@@ -87,7 +121,6 @@
 img.arrow
     width: 30px
     height: 30px
-    margin-top: 143px
     cursor: pointer
     z-index: 8
 img.left_arrow
